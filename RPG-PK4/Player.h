@@ -13,12 +13,12 @@ class Player {
 	//*********MEMBERS***************************
 protected:
 	string name;
-	Equipment equipment;
-	SkillTree* skillTree = new SkillTree[3];
+	Equipment* equip = new Equipment();
+	SkillTree* skill = new SkillTree[3];
 	//Weapon weapon;
 	//Armor armor;
 	int maxHealth;
-	int actuallHealth;
+	int currentHealth;
 	int level;
 	int experience;
 	int strenght;
@@ -30,22 +30,27 @@ protected:
 public:
 	Player(string);
 	~Player();
+
 	virtual void writeStatistic() = 0;
 	void levelUp();
-	//int takeDamage();
+	void takeDamage(int);
+
+
+
 	string getName();
-	Equipment getEquipment();
+	Equipment* getEquipment();
 	SkillTree* getSkillTree();
 	//Weapon getWeapon();
 	//Armor getArmor();
 	int getMaxHealth();
-	int getActualHealth();
+	int getCurrentHealth();
 	int getLevel();
 	int getExperience();
 	int getStrenght();
 	int getAgility();
 	int getIntellect();
 	double getGold();
+	double getDamage();
 	
 };
 

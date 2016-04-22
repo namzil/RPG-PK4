@@ -10,7 +10,8 @@ int main() {
 
 	Warrior gracz = Warrior("Mrowka");
 	gracz.writeStatistic();
-	cout << typeid(gracz).name();
+	cout << typeid(gracz).name() <<"\n";
+	//cout<<gracz.getDamage()<<"\n";
 
 	system("pause");
 	return 0;

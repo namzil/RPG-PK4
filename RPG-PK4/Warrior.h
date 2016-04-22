@@ -7,7 +7,7 @@
 class Warrior : public Player {
 private:
 	int maxRage;
-	int actuallRage;
+	int currentRage;
 
 public:
 	Warrior(string);

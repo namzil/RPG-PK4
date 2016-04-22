@@ -8,7 +8,7 @@
 class Mage : public Player {
 private:
 	int maxMana;
-	int actuallMana;
+	int currentMana;
 
 public:
 	Mage(string);

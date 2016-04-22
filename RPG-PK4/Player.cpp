@@ -3,19 +3,19 @@
 Player::Player(string n) {
 	name = n;
 	maxHealth = 300;
-	actuallHealth = 300;
+	currentHealth = 300;
 	level = 0;
 	experience = 0;
 	strenght = 10;
 	agility = 10;
 	intellect = 10;
 	gold = 100.0;
-	skillTree[0].unlockSkill("Atak podstawowy");
+	skill[0].unlockSkill("Atak podstawowy");
 }
 
 Player::~Player()
 {
-		delete[] skillTree;
+		delete[] skill;
 }
 
 void Player::writeStatistic()
@@ -23,7 +23,7 @@ void Player::writeStatistic()
 	cout << "Nazwa: " << name << "\n";
 	cout << "Poziom: " << level << "\n";
 	cout << "Doswiadczenie: " << experience << "\\" << 100 << "\n";
-	cout << "HP: " << actuallHealth <<"\\" << maxHealth << "\n";
+	cout << "HP: " << currentHealth <<"\\" << maxHealth << "\n";
 	cout << "Sila: " << strenght << "\n";
 	cout << "Zrecznosc: " << agility << "\n";
 	cout << "Inteligencja: " << intellect << "\n";
@@ -32,9 +32,14 @@ void Player::writeStatistic()
 void Player::levelUp()
 {
 	maxHealth = maxHealth*0.1;
-	actuallHealth = maxHealth;
+	currentHealth = maxHealth;
 	level += 1;
 
+}
+
+void Player::takeDamage(int damage)
+{
+	currentHealth = currentHealth - damage;
 }
 
 string Player::getName()
@@ -42,14 +47,14 @@ string Player::getName()
 	return name;
 }
 
-Equipment Player::getEquipment()
+Equipment* Player::getEquipment()
 {
-	return equipment;
+	return equip;
 }
 
 SkillTree* Player::getSkillTree()
 {
-	return skillTree;
+	return skill;
 }
 
 int Player::getMaxHealth()
@@ -57,9 +62,9 @@ int Player::getMaxHealth()
 	return maxHealth;
 }
 
-int Player::getActualHealth()
+int Player::getCurrentHealth()
 {
-	return actuallHealth;
+	return currentHealth;
 }
 
 int Player::getLevel()
@@ -90,4 +95,9 @@ int Player::getIntellect()
 double Player::getGold()
 {
 	return gold;
+}
+
+double Player::getDamage()
+{
+	return damage;
 }

@@ -8,7 +8,7 @@
 class Ranger : public Player {
 private:
 	int maxEnergy;
-	int actuallEnergy;
+	int currentEnergy;
 
 public:
 	Ranger(string);

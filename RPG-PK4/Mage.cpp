@@ -3,7 +3,7 @@
 Mage::Mage(string n) : Player (n)
 {
 	maxMana = 200;
-	actuallMana = 200;
+	currentMana = 200;
 }
 
 Mage::~Mage()
@@ -13,5 +13,5 @@ Mage::~Mage()
 void Mage::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Wscieklosc: " << actuallMana << "\\" << maxMana << "\n";
+	cout << "Wscieklosc: " << currentMana << "\\" << maxMana << "\n";
 }

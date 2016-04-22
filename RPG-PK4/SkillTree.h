@@ -1,7 +1,8 @@
 #ifndef SKILLTREE_H
 #define SKILLTREE_H
-#include "Player.h"
+//#include "Player.h"
 #include <typeinfo>
+#include <string>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ public:
 	
 	void unlockSkill(string);
 
-	int basicAttack();
+//	int basicAttack(Player*);
 
 	void heal();
 

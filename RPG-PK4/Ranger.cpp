@@ -3,7 +3,7 @@
 Ranger::Ranger(string n) : Player(n)
 {
 	maxEnergy = 100;
-	actuallEnergy = 100;
+	currentEnergy = 100;
 }
 
 Ranger::~Ranger()
@@ -13,5 +13,5 @@ Ranger::~Ranger()
 void Ranger::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Wscieklosc: " << actuallEnergy << "\\" << maxEnergy << "\n";
+	cout << "Wscieklosc: " << currentEnergy << "\\" << maxEnergy << "\n";
 }
