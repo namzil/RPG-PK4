@@ -1,10 +1,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <iostream>
-#include <string>
 #include "Equipment.h"
 #include "SkillTree.h"
+#include <iostream>
+#include <string>
+
 
 using namespace std;
 
@@ -34,7 +35,7 @@ public:
 	virtual void writeStatistic() = 0;
 	void levelUp();
 	void takeDamage(int);
-
+	void dead();  //metoda do zrobienia
 
 
 	string getName();

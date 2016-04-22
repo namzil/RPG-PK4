@@ -17,7 +17,9 @@ public:
 	
 	void unlockSkill(string);
 
-//	int basicAttack(Player*);
+	string skillsList(int, int); // do zrobienia
+
+	//int basicAttack(Player*);
 
 	void heal();
 

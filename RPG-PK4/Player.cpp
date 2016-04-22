@@ -40,6 +40,13 @@ void Player::levelUp()
 void Player::takeDamage(int damage)
 {
 	currentHealth = currentHealth - damage;
+	if (currentHealth <= 0)
+		dead();
+}
+
+void Player::dead()
+{
+	//koniec gry
 }
 
 string Player::getName()
