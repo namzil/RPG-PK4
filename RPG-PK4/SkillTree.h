@@ -1,10 +1,12 @@
 #ifndef SKILLTREE_H
 #define SKILLTREE_H
-//#include "Player.h"
+#include "Player.h"
 #include <typeinfo>
 #include <string>
 
 using namespace std;
+
+class Player;
 
 class SkillTree {
 private:

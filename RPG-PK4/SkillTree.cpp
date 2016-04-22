@@ -2,8 +2,8 @@
 
 SkillTree::SkillTree()
 {
-	skillName = "Niedostepne";
-	canBeUsed = 0;
+	//skillName = "Niedostepne";
+	//canBeUsed = 0;
 }
 
 SkillTree::~SkillTree()

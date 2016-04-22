@@ -9,6 +9,8 @@
 
 using namespace std;
 
+extern class SkillTree;
+
 
 class Player {
 	//*********MEMBERS***************************
