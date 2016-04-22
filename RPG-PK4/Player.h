@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "Equipment.h"
+#include "SkillTree.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ class Player {
 protected:
 	string name;
 	Equipment equipment;
+	SkillTree* skillTree = new SkillTree[3];
 	//Weapon weapon;
 	//Armor armor;
 	int maxHealth;
@@ -29,7 +31,22 @@ public:
 	Player(string);
 	~Player();
 	virtual void writeStatistic() = 0;
+	void levelUp();
 	//int takeDamage();
+	string getName();
+	Equipment getEquipment();
+	SkillTree* getSkillTree();
+	//Weapon getWeapon();
+	//Armor getArmor();
+	int getMaxHealth();
+	int getActualHealth();
+	int getLevel();
+	int getExperience();
+	int getStrenght();
+	int getAgility();
+	int getIntellect();
+	double getGold();
+	
 };
 
 
