@@ -2,21 +2,18 @@
 #define ITEM_H
 
 class Item {
-private:
+protected:
 	string name;
 	double price;
 	int fromLvl;
 
 public:
 	Item();
-	virtual void buy();
-	virtual void sell();
+	virtual double buy();
+	virtual double sell();
 	virtual void showDescription();
 
 };
-
-
-
 
 
 #endif // !ITEM_H

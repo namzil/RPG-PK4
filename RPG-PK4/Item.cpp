@@ -9,10 +9,10 @@ Item::Item() {}
 
 
 //funkcja kup przedmiot
-void Item::buy() {}
+double Item::buy() {}
 
 //funkcja sprzedaj przedmiot
-void Item::sell() {}
+double Item::sell() {}
 
 
 //funkcja wyswietl opis przedmiotu

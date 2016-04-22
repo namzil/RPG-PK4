@@ -110,10 +110,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Eatable.cpp" />
+    <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Eatable.h" />
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="Item.h" />
   </ItemGroup>

@@ -7,6 +7,7 @@ private:
 
 public:
 	Equipment();
+	addItem(Item);
 };
 
 
