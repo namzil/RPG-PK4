@@ -110,6 +110,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Eatable.cpp" />
+    <ClCompile Include="Equipment.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Mage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -121,6 +124,11 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ranger.h" />
     <ClInclude Include="Warrior.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Eatable.h" />
+    <ClInclude Include="Equipment.h" />
+    <ClInclude Include="Item.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
