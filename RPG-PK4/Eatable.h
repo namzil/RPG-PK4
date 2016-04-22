@@ -1,6 +1,7 @@
 #ifndef EATABLE_H
 #define EATABLE_H
 #include "Item.h"
+#include "Equipment.h"
 
 class Eatable: public Item {
 private:
@@ -14,7 +15,6 @@ public:
 	double buy();
 	double sell();
 	void showDescription();
-	}
 
 };
 

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Equipment.h"
 
 using namespace std;
 
@@ -11,6 +12,9 @@ class Player {
 	//*********MEMBERS***************************
 protected:
 	string name;
+	Equipment equipment;
+	//Weapon weapon;
+	//Armor armor;
 	int maxHealth;
 	int actuallHealth;
 	int level;
@@ -25,7 +29,7 @@ public:
 	Player(string);
 	~Player();
 	virtual void writeStatistic() = 0;
-	int takeDamage();
+	//int takeDamage();
 };
 
 

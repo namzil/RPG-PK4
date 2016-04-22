@@ -9,10 +9,14 @@ Item::Item() {}
 
 
 //funkcja kup przedmiot
-double Item::buy() {}
+double Item::buy() {
+	return price*(-1);
+}
 
 //funkcja sprzedaj przedmiot
-double Item::sell() {}
+double Item::sell() {
+	return price;
+}
 
 
 //funkcja wyswietl opis przedmiotu

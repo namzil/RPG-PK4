@@ -30,6 +30,9 @@
     <ClCompile Include="Ranger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SkillTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -53,6 +56,9 @@
     <ClCompile Include="Eatable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClInclude Include="SkillTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Equipment.h">

@@ -5,4 +5,4 @@ Equipment::Equipment() {}
 
 //funkcja-dodaj przedmiot do ekwipunku
 
-Equipment::addItem(Item newItem){}
+void Equipment::addItem(Item newItem){}
