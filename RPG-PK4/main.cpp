@@ -3,6 +3,7 @@
 #include "Ranger.h"
 #include "Warrior.h"
 #include "SkillTree.h"
+#include "NPC.h"
 
 #include <iostream>
 #include <string>
@@ -39,6 +40,8 @@ int main() {
 		break;
 	}
 	}
+
+
 
 /*	Player* gracz;
 
