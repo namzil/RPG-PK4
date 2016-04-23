@@ -2,20 +2,21 @@
 
 Player::Player(string n) {
 	name = n;
-	maxHealth = 300;
-	currentHealth = 300;
+	//maxHealth = 300;
+	//currentHealth = 300;
 	level = 0;
 	experience = 0;
-	strenght = 10;
-	agility = 10;
-	intellect = 10;
+	//strenght = 10;
+	//agility = 10;
+	//intellect = 10;
 	gold = 100.0;
 	//skill[0].unlockSkill("Atak podstawowy");
 }
 
 Player::~Player()
 {
-	//	delete[] skill;
+	delete[] skill;
+	delete equip;
 }
 
 void Player::writeStatistic()
@@ -45,22 +46,22 @@ void Player::levelUp()
 	maxHealth = maxHealth*0.1;
 	currentHealth = maxHealth;
 	level += 1;
-
+	experience -= experience;
 }
 
 void Player::updateDamage()
 {
 	switch (proffesion) {
 		case warrior:{  
-			damage = strenght * 10 + agility + intellect ;
+			damage = (strenght * 10 + agility*3 + intellect)/10 ;
 			break;
 		}
 		case ranger: {
-			damage = agility * 10 + strenght + intellect;
+			damage = (agility * 10 + strenght * 2 + intellect * 2)/10;
 			break;
 		}
 		case mage: {
-			damage = intellect * 10 + strenght + agility;
+			damage = (intellect * 8 + strenght + agility*3)/10;
 			break;
 		}
 		}
@@ -92,10 +93,10 @@ Equipment* Player::getEquipment()
 	return equip;
 }
 
-/*SkillTree* Player::getSkillTree()
+Skill* Player::getSkill()
 {
 	return skill;
-}*/
+}
 
 int Player::getMaxHealth()
 {

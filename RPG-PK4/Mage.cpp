@@ -3,8 +3,13 @@
 Mage::Mage(string n) : Player (n)
 {
 	proffesion = mage;
+	maxHealth = 200;
+	currentHealth = 200;
 	maxMana = 200;
 	currentMana = 200;
+	intellect = 30;
+	agility = 10;
+	strenght = 10;
 	updateDamage();
 }
 
