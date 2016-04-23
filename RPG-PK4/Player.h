@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "SkillTree.h"
+//#include "SkillTree.h"
 #include "Equipment.h"
 #include <iostream>
 #include <string>
@@ -17,7 +17,7 @@ class Player {
 protected:
 	string name;
 	Equipment* equip = new Equipment();
-	SkillTree* skill = new SkillTree[3];
+	//SkillTree* skill = new SkillTree[3];
 	//Weapon weapon;
 	//Armor armor;
 	int maxHealth;

@@ -10,12 +10,12 @@ Player::Player(string n) {
 	agility = 10;
 	intellect = 10;
 	gold = 100.0;
-	skill[0].unlockSkill("Atak podstawowy");
+	//skill[0].unlockSkill("Atak podstawowy");
 }
 
 Player::~Player()
 {
-		delete[] skill;
+	//	delete[] skill;
 }
 
 void Player::writeStatistic()
@@ -59,10 +59,10 @@ Equipment* Player::getEquipment()
 	return equip;
 }
 
-SkillTree* Player::getSkillTree()
+/*SkillTree* Player::getSkillTree()
 {
 	return skill;
-}
+}*/
 
 int Player::getMaxHealth()
 {

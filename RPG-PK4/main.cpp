@@ -15,7 +15,16 @@ int main() {
 	Warrior gracz = Warrior("Mrowka");
 	gracz.writeStatistic();
 	cout << typeid(gracz).name() <<"\n";
-	cout << gracz.getSkillTree()->getSkillName();
+
+
+
+
+
+
+
+
+
+	//cout << gracz.getSkillTree()->getSkillName();
 
 	//SkillTree* asd = new SkillTree[3];
 	//cout<<gracz.getDamage()<<"\n";

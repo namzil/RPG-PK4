@@ -117,6 +117,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ranger.cpp" />
+    <ClCompile Include="Skill.cpp" />
     <ClCompile Include="SkillTree.cpp" />
     <ClCompile Include="Warrior.cpp" />
   </ItemGroup>
@@ -124,6 +125,7 @@
     <ClInclude Include="Mage.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ranger.h" />
+    <ClInclude Include="Skill.h" />
     <ClInclude Include="SkillTree.h" />
     <ClInclude Include="Warrior.h" />
   </ItemGroup>
