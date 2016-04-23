@@ -111,17 +111,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Eatable.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Mage.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ranger.cpp" />
     <ClCompile Include="Skill.cpp" />
     <ClCompile Include="Warrior.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Mage.h" />
+    <ClInclude Include="NPC.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ranger.h" />
     <ClInclude Include="Skill.h" />
