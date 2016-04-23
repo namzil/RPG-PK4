@@ -118,7 +118,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ranger.cpp" />
     <ClCompile Include="Skill.cpp" />
-    <ClCompile Include="SkillTree.cpp" />
     <ClCompile Include="Warrior.cpp" />
   </ItemGroup>
   <ItemGroup>

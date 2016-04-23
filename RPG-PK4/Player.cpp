@@ -21,12 +21,23 @@ Player::~Player()
 void Player::writeStatistic()
 {
 	cout << "Nazwa: " << name << "\n";
+	cout << "Klasa: " << checkClass() << "\n";
 	cout << "Poziom: " << level << "\n";
 	cout << "Doswiadczenie: " << experience << "\\" << 100 << "\n";
 	cout << "HP: " << currentHealth <<"\\" << maxHealth << "\n";
 	cout << "Sila: " << strenght << "\n";
 	cout << "Zrecznosc: " << agility << "\n";
 	cout << "Inteligencja: " << intellect << "\n";
+	cout << "Obrazenia: " << damage << "\n";
+}
+
+string Player::checkClass() {
+	if (proffesion == warrior)
+		return "wojownik";
+	else if (proffesion == ranger)
+		return "lucznik";
+	else if (proffesion == mage)
+		return "mag";
 }
 
 void Player::levelUp()
@@ -35,6 +46,28 @@ void Player::levelUp()
 	currentHealth = maxHealth;
 	level += 1;
 
+}
+
+void Player::updateDamage()
+{
+	switch (proffesion) {
+		case warrior:{  
+			damage = strenght * 10 + agility + intellect ;
+			break;
+		}
+		case ranger: {
+			damage = agility * 10 + strenght + intellect;
+			break;
+		}
+		case mage: {
+			damage = intellect * 10 + strenght + agility;
+			break;
+		}
+		}
+}
+
+void Player::updatePlayer() {
+	updateDamage();
 }
 
 void Player::takeDamage(int damage)

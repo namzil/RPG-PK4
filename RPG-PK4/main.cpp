@@ -11,10 +11,48 @@
 using namespace std;
 
 int main() {
+	string name;
+	int prof;
 
-	Warrior gracz = Warrior("Mrowka");
-	gracz.writeStatistic();
-	cout << typeid(gracz).name() <<"\n";
+	cout << "Podaj nazwe gracza\n";
+	cin >> name;
+	cout << "Wybierz klase: 1.wojownik 2.lucznik 3.mag\n";
+	cin >> prof;
+
+	switch (prof) {
+	case 1: {
+		Warrior gracz = Warrior(name);
+		gracz.writeStatistic();
+		cout << typeid(gracz).name() << "\n";
+		break;
+	}
+	case 2: {
+		Ranger gracz = Ranger(name);
+		gracz.writeStatistic();
+		cout << typeid(gracz).name() << "\n";
+		break;
+	}
+	case 3: {
+		Mage gracz = Mage(name);
+		gracz.writeStatistic();
+		cout << typeid(gracz).name() << "\n";
+		break;
+	}
+	}
+
+/*	Player* gracz;
+
+	if (prof == 1)
+		gracz = new Warrior(name);
+	else if(prof == 2)
+		Ranger gracz = Ranger(name);
+	else 
+		Mage gracz = Mage(name);*/
+
+
+	//Warrior gracz = Warrior("Mrowka");
+	
+	
 
 
 
@@ -24,7 +62,7 @@ int main() {
 
 
 
-	//cout << gracz.getSkillTree()->getSkillName();
+	//cout << gracz.getSkill()->getSkillName();
 
 	//SkillTree* asd = new SkillTree[3];
 	//cout<<gracz.getDamage()<<"\n";

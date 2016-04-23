@@ -1,7 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-//#include "SkillTree.h"
+#include "Skill.h"
+#include "SkillTree.h"
 #include "Equipment.h"
 #include <iostream>
 #include <string>
@@ -9,6 +10,7 @@
 
 using namespace std;
 
+enum  prof { warrior, mage, ranger };
 
 class SkillTree;
 
@@ -16,8 +18,9 @@ class Player {
 	//*********MEMBERS***************************
 protected:
 	string name;
+	prof proffesion;
 	Equipment* equip = new Equipment();
-	//SkillTree* skill = new SkillTree[3];
+	Skill* skill = new Skill[3];
 	//Weapon weapon;
 	//Armor armor;
 	int maxHealth;
@@ -38,11 +41,14 @@ public:
 	void levelUp();
 	void takeDamage(int);
 	void dead();  //metoda do zrobienia
+	string checkClass();
+	void updateDamage();
 
+	void updatePlayer();
 
 	string getName();
 	Equipment* getEquipment();
-	SkillTree* getSkillTree();
+	Skill* getSkill();
 	//Weapon getWeapon();
 	//Armor getArmor();
 	int getMaxHealth();

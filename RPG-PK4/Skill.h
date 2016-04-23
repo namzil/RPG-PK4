@@ -15,7 +15,7 @@ private:
 public:
 	Skill(); //Do poprawek
 	~Skill();
-
+	void loadSkills(); //do zrobienia
 };
 
 

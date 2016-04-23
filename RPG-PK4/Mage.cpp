@@ -2,8 +2,10 @@
 
 Mage::Mage(string n) : Player (n)
 {
+	proffesion = mage;
 	maxMana = 200;
 	currentMana = 200;
+	updateDamage();
 }
 
 Mage::~Mage()
@@ -13,5 +15,5 @@ Mage::~Mage()
 void Mage::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Wscieklosc: " << currentMana << "\\" << maxMana << "\n";
+	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
 }

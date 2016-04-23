@@ -2,8 +2,10 @@
 
 Ranger::Ranger(string n) : Player(n)
 {
+	proffesion = ranger;
 	maxEnergy = 100;
 	currentEnergy = 100;
+	updateDamage();
 }
 
 Ranger::~Ranger()
@@ -13,5 +15,5 @@ Ranger::~Ranger()
 void Ranger::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Wscieklosc: " << currentEnergy << "\\" << maxEnergy << "\n";
+	cout << "Energia: " << currentEnergy << "\\" << maxEnergy << "\n";
 }

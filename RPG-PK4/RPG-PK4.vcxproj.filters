@@ -30,9 +30,6 @@
     <ClCompile Include="Ranger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SkillTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Skill.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

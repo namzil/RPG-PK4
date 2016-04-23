@@ -10,3 +10,8 @@ Skill::Skill()
 Skill::~Skill()
 {
 }
+
+void Skill::loadSkills()
+{
+
+}
