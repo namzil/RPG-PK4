@@ -2,8 +2,8 @@
 
 SkillTree::SkillTree()
 {
-	//skillName = "Niedostepne";
-	//canBeUsed = 0;
+	skillName = "Niedostepne";
+	canBeUsed = 0;
 }
 
 SkillTree::~SkillTree()
@@ -14,6 +14,11 @@ void SkillTree::unlockSkill(string name)
 {
 	skillName = name;
 	canBeUsed = 1;
+}
+
+string SkillTree::getSkillName()
+{
+	return skillName;
 }
 
 string SkillTree::skillsList(int number, int level)

@@ -1,16 +1,16 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "Equipment.h"
 #include "SkillTree.h"
+#include "Equipment.h"
 #include <iostream>
 #include <string>
 
 
 using namespace std;
 
-extern class SkillTree;
 
+class SkillTree;
 
 class Player {
 	//*********MEMBERS***************************

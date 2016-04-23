@@ -10,7 +10,7 @@ Player::Player(string n) {
 	agility = 10;
 	intellect = 10;
 	gold = 100.0;
-	//skill[0].unlockSkill("Atak podstawowy");
+	skill[0].unlockSkill("Atak podstawowy");
 }
 
 Player::~Player()
