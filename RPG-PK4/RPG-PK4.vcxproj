@@ -110,6 +110,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Bow.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Sword.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Wand.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Weapon.cpp" />
     <ClCompile Include="Eatable.cpp" />
     <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -121,6 +125,10 @@
     <ClCompile Include="Warrior.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Bow.h" />
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Sword.h" />
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Wand.h" />
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Weapon.h" />
     <ClInclude Include="Mage.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ranger.h" />

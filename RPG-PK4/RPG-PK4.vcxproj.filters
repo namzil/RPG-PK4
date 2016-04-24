@@ -33,6 +33,18 @@
     <ClCompile Include="Skill.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Sword.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Wand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Bow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -60,6 +72,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Skill.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Bow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Sword.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Wand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
