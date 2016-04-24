@@ -17,7 +17,7 @@ Player::Player(string n) {
 
 Player::~Player()
 {
-	delete[] skill;
+	delete [] skill;
 //	delete equip;
 }
 

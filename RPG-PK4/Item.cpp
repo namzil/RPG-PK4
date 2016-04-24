@@ -7,7 +7,11 @@ using namespace std;
 //konstruktor
 Item::Item() {}
 
+void Item::use(Player* player1) {
 
+
+
+}
 //funkcja kup przedmiot
 double Item::buy() {
 	return price*(-1);

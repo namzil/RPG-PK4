@@ -110,10 +110,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Bow.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Sword.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Wand.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\RPG-PK4\Weapon.cpp" />
+    <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="Bow.cpp" />
     <ClCompile Include="Eatable.cpp" />
     <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -122,19 +120,23 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ranger.cpp" />
     <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="Wand.cpp" />
     <ClCompile Include="Warrior.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Bow.h" />
-    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Sword.h" />
-    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Wand.h" />
-    <ClInclude Include="..\..\..\..\Desktop\RPG-PK4\Weapon.h" />
+    <ClInclude Include="Armor.h" />
+    <ClInclude Include="Bow.h" />
     <ClInclude Include="Mage.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ranger.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="SkillTree.h" />
+    <ClInclude Include="Sword.h" />
+    <ClInclude Include="Wand.h" />
     <ClInclude Include="Warrior.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Eatable.h" />

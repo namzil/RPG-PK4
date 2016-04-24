@@ -12,12 +12,10 @@ Eatable::Eatable(int hp, int mana, int energy, int rage, int lvl) {
 	fromLvl = lvl;
 }
 
-double Eatable::buy() {
-	return (price * (-1));
-}
+void Eatable::use(Player* player1) {
+	
 
-double Eatable::sell() {
-	return price;
+
 }
 
 void Eatable::showDescription() {
