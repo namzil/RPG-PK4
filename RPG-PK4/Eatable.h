@@ -12,8 +12,6 @@ private:
 
 public:
 	Eatable(int,int,int,int,int);
-	double buy();
-	double sell();
 	void showDescription();
 
 };

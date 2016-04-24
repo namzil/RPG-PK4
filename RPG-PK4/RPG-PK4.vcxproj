@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Bow.cpp" />
     <ClCompile Include="Eatable.cpp" />
     <ClCompile Include="Equipment.cpp" />
@@ -125,6 +126,7 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="Bow.h" />
     <ClInclude Include="Mage.h" />
     <ClInclude Include="Player.h" />

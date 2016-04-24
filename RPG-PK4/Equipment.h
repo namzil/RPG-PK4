@@ -6,11 +6,11 @@
 
 class Equipment {
 private:
-	vector <Item> itemList;
+	vector <Item*> itemList;
 
 public:
 	Equipment();
-	void addItem(Item);
+	void addItem(Item*);
 };
 
 

@@ -11,8 +11,8 @@ protected:
 	int fromLvl;
 public:
 	Item();
-	virtual double buy();
-	virtual double sell();
+	double buy();
+	double sell();
 	virtual void showDescription();
 
 };
