@@ -9,7 +9,7 @@ protected:
 	string name;
 	double price;
 	int fromLvl;
-
+	//
 public:
 	Item();
 	virtual double buy();
