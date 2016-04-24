@@ -60,7 +60,17 @@ public:
 	int getIntellect();
 	double getGold();
 	double getDamage();
-	
+
+	void setName(string);
+	//void setEquipment(Equipment);
+	void setSkill(Skill*);
+	void setMaxHealth(int);
+	void setCurrentHealth(int);
+	void setLevel(int);
+	void setExperience(int);
+	void setStrenght(int);
+	void setAgility(int);
+	void setIntellect(int);
 };
 
 

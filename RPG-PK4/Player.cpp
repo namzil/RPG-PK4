@@ -151,3 +151,38 @@ double Player::getDamage()
 {
 	return damage;
 }
+
+void Player::setName(string n)
+{
+	name = n;
+}
+
+void Player::setSkill(Skill* s)
+{
+	skill = s;
+}
+
+void Player::setLevel(int l)
+{
+	level = l;
+}
+
+void Player::setExperience(int e)
+{
+	experience = e;
+}
+
+void Player::setStrenght(int s)
+{
+	strenght = s;
+}
+
+void Player::setAgility(int a)
+{
+	agility = a;
+}
+
+void Player::setIntellect(int i)
+{
+	intellect = i;
+}
