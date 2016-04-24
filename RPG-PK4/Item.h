@@ -1,9 +1,8 @@
 #ifndef ITEM_H
 #define ITEM_H
-
 #include <string>
 using namespace std;
-
+class Player;
 class Item {
 protected:
 	string name;
@@ -13,7 +12,9 @@ public:
 	Item();
 	double buy();
 	double sell();
-	virtual void showDescription();
+	virtual void use(Player*)=0;
+	virtual void showDescription()=0;
+
 
 };
 

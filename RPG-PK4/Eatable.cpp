@@ -12,6 +12,11 @@ Eatable::Eatable(int hp, int mana, int energy, int rage, int lvl) {
 	fromLvl = lvl;
 }
 
+void Eatable::use(Player* player1) {
+	
+
+
+}
 
 void Eatable::showDescription() {
 	cout << "Nazwa: " << name << endl;

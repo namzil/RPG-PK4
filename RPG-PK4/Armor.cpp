@@ -14,6 +14,12 @@ Armor::Armor(string nName, double nPrice, int nLvl, int nDef, int mDef, double b
 	blockChance = bc;
 }
 
+
+void Armor::use(Player* player1) {
+
+
+}
+
 // wypisuje informaje o zbroi
 void Armor::showDescription() {
 	cout << "Nazwa: " << name << endl;

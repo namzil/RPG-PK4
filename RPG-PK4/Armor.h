@@ -9,6 +9,7 @@ private:
 	double blockChance;
 public:
 	Armor(string name, double price, int lvl, int def, int mDef, double blockChance);
+	void use(Player*);
 	void showDescription();
 
 };

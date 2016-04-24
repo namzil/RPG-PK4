@@ -3,6 +3,7 @@
 #include "Item.h"
 #include "Equipment.h"
 
+
 class Eatable: public Item {
 private:
 	int hpRegen;
@@ -12,6 +13,7 @@ private:
 
 public:
 	Eatable(int,int,int,int,int);
+	void use(Player* );
 	void showDescription();
 
 };

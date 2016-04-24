@@ -10,7 +10,7 @@ private:
 
 public:
 	Equipment();
-	void addItem(Item*);
+	void addItem(Item* );
 };
 
 
