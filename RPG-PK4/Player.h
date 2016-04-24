@@ -2,11 +2,15 @@
 #define PLAYER_H
 
 #include "Skill.h"
+//#include "Armor.h"
+//#include "Weapon.h"
 #include "SkillTree.h"
 #include "Equipment.h"
 #include <iostream>
 #include <string>
 
+class Weapon;
+class Armor;
 
 using namespace std;
 
@@ -21,8 +25,8 @@ protected:
 	prof proffesion;
 	//Equipment* equip = new Equipment();
 	Skill* skill = new Skill[3];
-	//Weapon weapon;
-	//Armor armor;
+    Weapon* weapon;
+	Armor* armor;
 	int maxHealth;
 	int currentHealth;
 	int level;
@@ -49,8 +53,8 @@ public:
 	string getName();
 	Equipment* getEquipment();
 	Skill* getSkill();
-	//Weapon getWeapon();
-	//Armor getArmor();
+	//Weapon* getWeapon();
+	//Armor* getArmor();
 	int getMaxHealth();
 	int getCurrentHealth();
 	int getLevel();
@@ -71,6 +75,8 @@ public:
 	void setStrenght(int);
 	void setAgility(int);
 	void setIntellect(int);
+	void setArmor(Armor*);
+	void setWeapon(Weapon*);
 };
 
 

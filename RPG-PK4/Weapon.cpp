@@ -2,8 +2,7 @@
 #include "Weapon.h"
 
 void Weapon::use(Player* player1) {
-
-
+	player1->setWeapon(this);
 }
 
 void Weapon::setDmg(int sDmg) {

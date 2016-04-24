@@ -186,3 +186,25 @@ void Player::setIntellect(int i)
 {
 	intellect = i;
 }
+
+void Player::setCurrentHealth(int h)
+{
+	currentHealth = h;
+}
+
+void Player::setMaxHealth(int mH)
+{
+	currentHealth = mH;
+}
+
+void Player::setArmor(Armor* a) 
+{
+	armor = a;
+
+}
+
+void Player::setWeapon(Weapon* w)
+{
+	weapon = w;
+
+}

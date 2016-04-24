@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Armor.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ Armor::Armor(string nName, double nPrice, int nLvl, int nDef, int mDef, double b
 
 void Armor::use(Player* player1) {
 
+	player1->setArmor(this);
 
 }
 
