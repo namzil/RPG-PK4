@@ -1,5 +1,7 @@
 #include "Skill.h"
 
+
+//kostruktor
 Skill::Skill()
 {
 	skillName = "Niedostepne";
@@ -11,6 +13,7 @@ Skill::~Skill()
 {
 }
 
+//chyba do usuniecia
 void Skill::loadSkills()
 {
 

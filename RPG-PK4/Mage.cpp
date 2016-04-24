@@ -1,5 +1,6 @@
 #include "Mage.h"
 
+//konstruktor
 Mage::Mage(string n) : Player (n)
 {
 	proffesion = mage;
@@ -17,6 +18,7 @@ Mage::~Mage()
 {
 }
 
+//wypisywanie statysk gracza
 void Mage::writeStatistic()
 {
 	Player::writeStatistic();

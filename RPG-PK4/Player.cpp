@@ -1,5 +1,7 @@
 #include "Player.h"
 
+
+//kostruktor
 Player::Player(string n) {
 	name = n;
 	//maxHealth = 300;
@@ -16,9 +18,10 @@ Player::Player(string n) {
 Player::~Player()
 {
 	delete[] skill;
-	delete equip;
+//	delete equip;
 }
 
+//wypisywanie statystyk gracza
 void Player::writeStatistic()
 {
 	cout << "Nazwa: " << name << "\n";
@@ -32,6 +35,7 @@ void Player::writeStatistic()
 	cout << "Obrazenia: " << damage << "\n";
 }
 
+//sprawdzanie klasy gracza
 string Player::checkClass() {
 	if (proffesion == warrior)
 		return "wojownik";
@@ -41,6 +45,7 @@ string Player::checkClass() {
 		return "mag";
 }
 
+//zdobycie nastepnego poziomu
 void Player::levelUp()
 {
 	maxHealth = maxHealth*0.1;
@@ -49,6 +54,7 @@ void Player::levelUp()
 	experience -= experience;
 }
 
+//aktualizacja obrazen
 void Player::updateDamage()
 {
 	switch (proffesion) {
@@ -67,9 +73,11 @@ void Player::updateDamage()
 		}
 }
 
+//aktualizacja postaci
 void Player::updatePlayer() {
 	updateDamage();
 }
+
 
 void Player::takeDamage(int damage)
 {
@@ -83,15 +91,16 @@ void Player::dead()
 	//koniec gry
 }
 
+
 string Player::getName()
 {
 	return name;
 }
 
-Equipment* Player::getEquipment()
+/*Equipment* Player::getEquipment()
 {
 	return equip;
-}
+}*/
 
 Skill* Player::getSkill()
 {

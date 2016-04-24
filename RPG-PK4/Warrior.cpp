@@ -1,5 +1,7 @@
 #include "Warrior.h"
 
+
+//kostruktor
 Warrior::Warrior(string n) : Player(n)
 {
 	proffesion = warrior;
@@ -17,6 +19,8 @@ Warrior::~Warrior()
 {
 }
 
+
+//wypisywanie statystyk
 void Warrior::writeStatistic()
 {
 	Player::writeStatistic();

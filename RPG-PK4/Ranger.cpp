@@ -1,5 +1,6 @@
 #include "Ranger.h"
 
+//kostruktor
 Ranger::Ranger(string n) : Player(n)
 {
 	proffesion = ranger;
@@ -17,6 +18,7 @@ Ranger::~Ranger()
 {
 }
 
+//wypisywanie statystyk
 void Ranger::writeStatistic()
 {
 	Player::writeStatistic();

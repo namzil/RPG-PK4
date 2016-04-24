@@ -19,7 +19,7 @@ class Player {
 protected:
 	string name;
 	prof proffesion;
-	Equipment* equip = new Equipment();
+	//Equipment* equip = new Equipment();
 	Skill* skill = new Skill[3];
 	//Weapon weapon;
 	//Armor armor;
