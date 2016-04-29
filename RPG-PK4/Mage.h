@@ -10,7 +10,7 @@ class Mage : public Player {
 private:
 	int maxMana;
 	int currentMana;
-	SkillTree* skills;
+	//SkillTree* skills;
 
 public:
 	Mage(string);

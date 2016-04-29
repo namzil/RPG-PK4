@@ -18,7 +18,9 @@ Player::Player(string n) {
 Player::~Player()
 {
 	delete [] skill;
-//	delete equip;
+	delete equipment;
+	delete armor;
+	delete weapon;
 }
 
 //wypisywanie statystyk gracza
@@ -92,19 +94,31 @@ void Player::dead()
 }
 
 
+//************************GETTERY********************************
+
 string Player::getName()
 {
 	return name;
 }
 
-/*Equipment* Player::getEquipment()
+Equipment * Player::getEquipment()
 {
-	return equip;
-}*/
+	return equipment;
+}
 
 Skill* Player::getSkill()
 {
 	return skill;
+}
+
+Weapon * Player::getWeapon()
+{
+	return weapon;
+}
+
+Armor * Player::getArmor()
+{
+	return armor;
 }
 
 int Player::getMaxHealth()
@@ -152,9 +166,15 @@ double Player::getDamage()
 	return damage;
 }
 
+//*************************SETTERY***********************************
 void Player::setName(string n)
 {
 	name = n;
+}
+
+void Player::setEquipment(Equipment* e)
+{
+	equipment = e;
 }
 
 void Player::setSkill(Skill* s)

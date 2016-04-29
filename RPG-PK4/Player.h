@@ -2,8 +2,8 @@
 #define PLAYER_H
 
 #include "Skill.h"
-//#include "Armor.h"
-//#include "Weapon.h"
+#include "Armor.h"
+#include "Weapon.h"
 #include "SkillTree.h"
 #include "Equipment.h"
 #include <iostream>
@@ -16,14 +16,12 @@ using namespace std;
 
 enum  prof { warrior, mage, ranger };
 
-class SkillTree;
-
 class Player {
-	//*********MEMBERS***************************
+
 protected:
 	string name;
 	prof proffesion;
-	//Equipment* equip = new Equipment();
+	Equipment* equipment = new Equipment();
 	Skill* skill = new Skill[3];
     Weapon* weapon;
 	Armor* armor;
@@ -53,8 +51,8 @@ public:
 	string getName();
 	Equipment* getEquipment();
 	Skill* getSkill();
-	//Weapon* getWeapon();
-	//Armor* getArmor();
+	Weapon* getWeapon();
+	Armor* getArmor();
 	int getMaxHealth();
 	int getCurrentHealth();
 	int getLevel();
@@ -66,8 +64,10 @@ public:
 	double getDamage();
 
 	void setName(string);
-	//void setEquipment(Equipment);
+	void setEquipment(Equipment*);
 	void setSkill(Skill*);
+	void setWeapon(Weapon*);
+	void setArmor(Armor*);
 	void setMaxHealth(int);
 	void setCurrentHealth(int);
 	void setLevel(int);
@@ -75,8 +75,6 @@ public:
 	void setStrenght(int);
 	void setAgility(int);
 	void setIntellect(int);
-	void setArmor(Armor*);
-	void setWeapon(Weapon*);
 };
 
 
