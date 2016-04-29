@@ -40,6 +40,7 @@ public:
 	~Player();
 
 	virtual void writeStatistic() = 0;
+
 	void levelUp();
 	void takeDamage(int);
 	void dead();  //metoda do zrobienia

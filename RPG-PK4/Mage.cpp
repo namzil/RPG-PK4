@@ -24,3 +24,18 @@ void Mage::writeStatistic()
 	Player::writeStatistic();
 	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
 }
+
+
+void Mage::useSkill(Skill s)
+{
+	if (s.getCanBeUsed())
+		if (currentMana >= s.getCost())
+		{
+			s.getSkillName();
+			currentMana -= s.getCost();
+		}
+		else
+			cout << "Za malo many";
+	else
+		cout << "Nie mozesz uzywac tej umiejetnosci";
+}
