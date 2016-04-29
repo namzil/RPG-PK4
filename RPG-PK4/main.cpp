@@ -19,6 +19,11 @@ void fight(Player* gracz, Enemy* wilk)
 	{
 		cout << "Wybierz umiejetnosc\n";
 		gracz->useSkill();
+		if (wilk->getHealth() > 0)
+			gracz->getAgility();
+		else
+			stillFighting = 0;
+		
 		system("pause");
 	}
 }
@@ -52,6 +57,11 @@ int main() {
 		break;
 	}
 	}
+
+	Enemy wilk;
+
+	wilk.setDamage(20);
+	wilk.setHealth(100);
 
 
 

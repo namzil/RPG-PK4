@@ -6,6 +6,9 @@
 #include "Weapon.h"
 #include "SkillTree.h"
 #include "Equipment.h"
+#include "NPC.h"
+#include "Enemy.h"
+
 #include <iostream>
 #include <string>
 

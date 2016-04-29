@@ -26,12 +26,17 @@ void Mage::writeStatistic()
 }
 
 
-void Mage::useSkill(Skill s)
+void Mage::castBasicAttack(Enemy enemy)
+{
+	enemy.setHealth(enemy.getHealth()-damage);
+}
+
+void Mage::useSkill(Enemy enemy, Skill s)
 {
 	if (s.getCanBeUsed())
 		if (currentMana >= s.getCost())
 		{
-			s.getSkillName();
+			castBasicAttack(enemy);
 			currentMana -= s.getCost();
 		}
 		else

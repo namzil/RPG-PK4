@@ -39,7 +39,6 @@ void Player::writeStatistic()
 
 void Player::useSkill()
 {
-	Mage::
 }
 
 //sprawdzanie klasy gracza
