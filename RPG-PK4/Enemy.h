@@ -9,11 +9,17 @@ using namespace std;
 class Enemy : public NPC {
 private:
 	int health;
-	double damage;
+	int damage;
 
 public:
 	Enemy();
 	~Enemy();
+
+	int getHealth();
+	int getDamage();
+
+	void setHealth(int);
+	void setDamage(int);
 };
 
 #endif
