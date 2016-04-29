@@ -20,6 +20,8 @@ public:
 
 	void setHealth(int);
 	void setDamage(int);
+
+	void v();
 };
 
 #endif

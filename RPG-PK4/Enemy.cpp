@@ -27,3 +27,7 @@ void Enemy::setDamage(int d)
 {
 	damage = d;
 }
+
+void Enemy::v()
+{
+}

@@ -1,5 +1,7 @@
 #include "Player.h"
 
+
+//kostruktor
 Player::Player(string n) {
 	name = n;
 	//maxHealth = 300;
@@ -15,10 +17,13 @@ Player::Player(string n) {
 
 Player::~Player()
 {
-	delete[] skill;
-	delete equip;
+	delete [] skill;
+	delete equipment;
+	delete armor;
+	delete weapon;
 }
 
+//wypisywanie statystyk gracza
 void Player::writeStatistic()
 {
 	cout << "Nazwa: " << name << "\n";
@@ -32,6 +37,12 @@ void Player::writeStatistic()
 	cout << "Obrazenia: " << damage << "\n";
 }
 
+void Player::useSkill()
+{
+	Mage::
+}
+
+//sprawdzanie klasy gracza
 string Player::checkClass() {
 	if (proffesion == warrior)
 		return "wojownik";
@@ -41,6 +52,7 @@ string Player::checkClass() {
 		return "mag";
 }
 
+//zdobycie nastepnego poziomu
 void Player::levelUp()
 {
 	maxHealth = maxHealth*0.1;
@@ -49,6 +61,7 @@ void Player::levelUp()
 	experience -= experience;
 }
 
+//aktualizacja obrazen
 void Player::updateDamage()
 {
 	switch (proffesion) {
@@ -67,9 +80,11 @@ void Player::updateDamage()
 		}
 }
 
+//aktualizacja postaci
 void Player::updatePlayer() {
 	updateDamage();
 }
+
 
 void Player::takeDamage(int damage)
 {
@@ -83,19 +98,32 @@ void Player::dead()
 	//koniec gry
 }
 
+
+//************************GETTERY********************************
+
 string Player::getName()
 {
 	return name;
 }
 
-Equipment* Player::getEquipment()
+Equipment * Player::getEquipment()
 {
-	return equip;
+	return equipment;
 }
 
 Skill* Player::getSkill()
 {
 	return skill;
+}
+
+Weapon * Player::getWeapon()
+{
+	return weapon;
+}
+
+Armor * Player::getArmor()
+{
+	return armor;
 }
 
 int Player::getMaxHealth()
@@ -141,4 +169,67 @@ double Player::getGold()
 double Player::getDamage()
 {
 	return damage;
+}
+
+//*************************SETTERY***********************************
+void Player::setName(string n)
+{
+	name = n;
+}
+
+void Player::setEquipment(Equipment* e)
+{
+	equipment = e;
+}
+
+void Player::setSkill(Skill* s)
+{
+	skill = s;
+}
+
+void Player::setLevel(int l)
+{
+	level = l;
+}
+
+void Player::setExperience(int e)
+{
+	experience = e;
+}
+
+void Player::setStrenght(int s)
+{
+	strenght = s;
+}
+
+void Player::setAgility(int a)
+{
+	agility = a;
+}
+
+void Player::setIntellect(int i)
+{
+	intellect = i;
+}
+
+void Player::setCurrentHealth(int h)
+{
+	currentHealth = h;
+}
+
+void Player::setMaxHealth(int mH)
+{
+	currentHealth = mH;
+}
+
+void Player::setArmor(Armor* a) 
+{
+	armor = a;
+
+}
+
+void Player::setWeapon(Weapon* w)
+{
+	weapon = w;
+
 }

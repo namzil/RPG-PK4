@@ -1,5 +1,6 @@
 #include "Mage.h"
 
+//konstruktor
 Mage::Mage(string n) : Player (n)
 {
 	proffesion = mage;
@@ -17,8 +18,24 @@ Mage::~Mage()
 {
 }
 
+//wypisywanie statysk gracza
 void Mage::writeStatistic()
 {
 	Player::writeStatistic();
 	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
+}
+
+
+void Mage::useSkill(Skill s)
+{
+	if (s.getCanBeUsed())
+		if (currentMana >= s.getCost())
+		{
+			s.getSkillName();
+			currentMana -= s.getCost();
+		}
+		else
+			cout << "Za malo many";
+	else
+		cout << "Nie mozesz uzywac tej umiejetnosci";
 }

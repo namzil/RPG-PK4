@@ -2,27 +2,29 @@
 #define PLAYER_H
 
 #include "Skill.h"
+#include "Armor.h"
+#include "Weapon.h"
 #include "SkillTree.h"
 #include "Equipment.h"
 #include <iostream>
 #include <string>
 
+class Weapon;
+class Armor;
 
 using namespace std;
 
 enum  prof { warrior, mage, ranger };
 
-class SkillTree;
-
 class Player {
-	//*********MEMBERS***************************
+
 protected:
 	string name;
 	prof proffesion;
-	Equipment* equip = new Equipment();
+	Equipment* equipment = new Equipment();
 	Skill* skill = new Skill[3];
-	//Weapon weapon;
-	//Armor armor;
+    Weapon* weapon;
+	Armor* armor;
 	int maxHealth;
 	int currentHealth;
 	int level;
@@ -38,6 +40,8 @@ public:
 	~Player();
 
 	virtual void writeStatistic() = 0;
+	virtual void useSkill();
+
 	void levelUp();
 	void takeDamage(int);
 	void dead();  //metoda do zrobienia
@@ -49,8 +53,8 @@ public:
 	string getName();
 	Equipment* getEquipment();
 	Skill* getSkill();
-	//Weapon getWeapon();
-	//Armor getArmor();
+	Weapon* getWeapon();
+	Armor* getArmor();
 	int getMaxHealth();
 	int getCurrentHealth();
 	int getLevel();
@@ -60,7 +64,19 @@ public:
 	int getIntellect();
 	double getGold();
 	double getDamage();
-	
+
+	void setName(string);
+	void setEquipment(Equipment*);
+	void setSkill(Skill*);
+	void setWeapon(Weapon*);
+	void setArmor(Armor*);
+	void setMaxHealth(int);
+	void setCurrentHealth(int);
+	void setLevel(int);
+	void setExperience(int);
+	void setStrenght(int);
+	void setAgility(int);
+	void setIntellect(int);
 };
 
 

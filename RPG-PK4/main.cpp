@@ -4,12 +4,24 @@
 #include "Warrior.h"
 #include "SkillTree.h"
 #include "NPC.h"
+#include "Enemy.h"
 
 #include <iostream>
 #include <string>
 
 
 using namespace std;
+
+void fight(Player* gracz, Enemy* wilk)
+{
+	bool stillFighting = 1;
+	while (stillFighting)
+	{
+		cout << "Wybierz umiejetnosc\n";
+		gracz->useSkill();
+		system("pause");
+	}
+}
 
 int main() {
 	string name;
