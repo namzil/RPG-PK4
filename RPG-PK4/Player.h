@@ -32,8 +32,9 @@ protected:
 	int strenght;
 	int agility;
 	int intellect;
+	int damage;
 	double gold;
-	double damage;
+
 
 public:
 	Player(string);
@@ -41,7 +42,8 @@ public:
 
 	virtual void writeStatistic() = 0;
 
-	void levelUp();
+	virtual void levelUp() = 0;
+
 	void takeDamage(int);
 	void dead();  //metoda do zrobienia
 	string checkClass();
@@ -49,6 +51,8 @@ public:
 
 	void updatePlayer();
 
+
+	//**********GETTERY I SETTERY************************
 	string getName();
 	Equipment* getEquipment();
 	Skill* getSkill();
@@ -62,7 +66,7 @@ public:
 	int getAgility();
 	int getIntellect();
 	double getGold();
-	double getDamage();
+	int getDamage();
 
 	void setName(string);
 	void setEquipment(Equipment*);
@@ -76,6 +80,7 @@ public:
 	void setStrenght(int);
 	void setAgility(int);
 	void setIntellect(int);
+	void setGold(double);
 };
 
 

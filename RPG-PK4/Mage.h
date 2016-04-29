@@ -17,6 +17,7 @@ public:
 	Mage(string);
 	~Mage();
 	void writeStatistic();
+	void levelUp();
 
 	void useSkill(Skill);
 };

@@ -24,3 +24,10 @@ void Ranger::writeStatistic()
 	Player::writeStatistic();
 	cout << "Energia: " << currentEnergy << "\\" << maxEnergy << "\n";
 }
+
+void Ranger::levelUp()
+{
+	Player::levelUp();
+	maxEnergy = maxEnergy*0.1;
+	currentEnergy = maxEnergy;
+}

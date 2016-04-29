@@ -16,6 +16,8 @@ public:
 	Ranger(string);
 	~Ranger();
 	void writeStatistic();
+	void levelUp();
+
 };
 
 

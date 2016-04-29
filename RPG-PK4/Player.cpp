@@ -52,6 +52,9 @@ void Player::levelUp()
 {
 	maxHealth = maxHealth*0.1;
 	currentHealth = maxHealth;
+	strenght = strenght*0.1;
+	agility = agility*0.1;
+	intellect = intellect*0.1;
 	level += 1;
 	experience -= experience;
 }
@@ -79,7 +82,6 @@ void Player::updateDamage()
 void Player::updatePlayer() {
 	updateDamage();
 }
-
 
 void Player::takeDamage(int damage)
 {
@@ -161,7 +163,7 @@ double Player::getGold()
 	return gold;
 }
 
-double Player::getDamage()
+int Player::getDamage()
 {
 	return damage;
 }
@@ -205,6 +207,11 @@ void Player::setAgility(int a)
 void Player::setIntellect(int i)
 {
 	intellect = i;
+}
+
+void Player::setGold(double g)
+{
+	gold = g;
 }
 
 void Player::setCurrentHealth(int h)

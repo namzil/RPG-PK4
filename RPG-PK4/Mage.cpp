@@ -25,6 +25,13 @@ void Mage::writeStatistic()
 	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
 }
 
+void Mage::levelUp()
+{
+	Player::levelUp();
+	maxMana = maxMana*0.1;
+	currentMana = maxMana;
+}
+
 
 void Mage::useSkill(Skill s)
 {

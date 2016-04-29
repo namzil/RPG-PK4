@@ -26,3 +26,8 @@ void Warrior::writeStatistic()
 	Player::writeStatistic();
 	cout << "Wscieklosc: " << currentRage << "\\" << maxRage << "\n";
 }
+
+void Warrior::levelUp()
+{
+	Player::levelUp();
+}

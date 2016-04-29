@@ -14,6 +14,7 @@ public:
 	Warrior(string);
 	~Warrior();
 	void writeStatistic();
+	void levelUp();
 };
 
 
