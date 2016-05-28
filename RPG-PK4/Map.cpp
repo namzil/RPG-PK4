@@ -3,36 +3,22 @@
 #include <conio.h>
 #include <cstdint>
 #include <windows.h>
+#include <cstdlib>
+#include <ctime>
 
-//definicje kolorów
-#define BLACK			0
-#define BLUE			1
-#define GREEN			2
-#define CYAN			3
-#define RED				4
-#define MAGENTA			5
-#define BROWN			6
-#define LIGHTGRAY		7
-#define DARKGRAY		8
-#define LIGHTBLUE		9
-#define LIGHTGREEN		10
-#define LIGHTCYAN		11
-#define LIGHTRED		12
-#define LIGHTMAGENTA	13
-#define YELLOW			14
-#define WHITE			15
+#define RAND_MAX  
 
-//funkjca ustawiajaca kolor konsoli
-void SetColorAndBackground(int ForgC, int BackC = 0)
-{
-	WORD wColor = ((BackC & 0x0F) << 4) + (ForgC & 0x0F);
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), wColor);
+Map::Map() {};
+
+void Map::randomEnemy() {
+	srand(time(NULL));
+		for (int i = 0; i < 10; i++) {
+			int x = rand() % 29;
+			int y = rand() % 69;
+			if (mapArray[x][y] == 5) //jesli wylosowane pole jest traw¹ to ustaw wroga
+				mapArray[x][y] = 4;
+		}
 }
-
-Map::Map() {
-	mapName = new char[50];
-
-};
 
 void Map::loadMap(string lvl) {
 	ifstream inFile;
@@ -48,9 +34,17 @@ void Map::loadMap(string lvl) {
 				mapArray[x][y] = (short int)tmpIn - 48; //zapis do tablicy jako int
 			}
 		}
+		randomEnemy();
 	}
 	else
 		cout << "I/O Error";
+}
+
+//funkjca ustawiajaca kolor konsoli
+void Map::SetColorAndBackground(int ForgC, int BackC = 0)
+{
+	WORD wColor = ((BackC & 0x0F) << 4) + (ForgC & 0x0F);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), wColor);
 }
 
 
@@ -85,7 +79,7 @@ void Map::drawMap() {
 					break;
 				case M_ENEMY:
 					SetColorAndBackground(LIGHTGREEN, GREEN);
-					cout << 'G';
+					cout << 'E';
 					break;
 				case M_NPC:
 					SetColorAndBackground(LIGHTCYAN, BLACK);
@@ -109,7 +103,6 @@ void Map::drawMap() {
 	}
 	SetColorAndBackground(WHITE, BLACK);
 }
-
 
 void Map::saveMap() {}
 
