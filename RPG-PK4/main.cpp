@@ -3,6 +3,7 @@
 #include "Ranger.h"
 #include "Warrior.h"
 #include "SkillTree.h"
+#include "Map.h"
 
 #include <iostream>
 #include <string>
@@ -11,7 +12,11 @@
 using namespace std;
 
 int main() {
-	string name;
+
+	Map map1;
+	map1.loadMap("1");
+	map1.drawMap();
+/*	string name;
 	int prof;
 
 	cout << "Podaj nazwe gracza\n";
@@ -38,7 +43,7 @@ int main() {
 		cout << typeid(gracz).name() << "\n";
 		break;
 	}
-	}
+	}*/
 
 /*	Player* gracz;
 
