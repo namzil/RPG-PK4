@@ -54,6 +54,12 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Neutral.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -96,6 +102,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Armor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Neutral.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
