@@ -1,6 +1,5 @@
 #include "Player.h"
 
-
 //kostruktor
 Player::Player(string n) {
 	name = n;
@@ -24,14 +23,14 @@ Player::~Player()
 //wypisywanie statystyk gracza
 void Player::writeStatistic()
 {
-	cout << "Nazwa: " << name << "\n";
+	cout << "Nazwa: " << name << "   ";
 	cout << "Klasa: " << checkClass() << "\n";
-	cout << "Poziom: " << level << "\n";
+	cout << "Poziom: " << level << "   ";
 	cout << "Doswiadczenie: " << experience << "\\" << 100 << "\n";
 	cout << "HP: " << currentHealth <<"\\" << maxHealth << "\n";
-	cout << "Sila: " << strenght << "\n";
+	cout << "Sila: " << strenght << "   ";
 	cout << "Zrecznosc: " << agility << "\n";
-	cout << "Inteligencja: " << intellect << "\n";
+	cout << "Inteligencja: " << intellect << "   ";
 	cout << "Obrazenia: " << damage << "\n";
 }
 

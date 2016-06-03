@@ -16,6 +16,8 @@ public:
 	Mage(string);
 	~Mage();
 	void writeStatistic();
+	int getCurrentMana();
+	int getMaxMana();
 };
 
 

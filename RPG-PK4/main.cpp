@@ -11,62 +11,54 @@
 
 using namespace std;
 
-int main() {
-
-	Map map1;
-	map1.loadMap("1");
-	map1.drawMap();
-/*	string name;
+int main() {	
+	string name;
 	int prof;
-
+//    Player gracz;
 	cout << "Podaj nazwe gracza\n";
 	cin >> name;
 	cout << "Wybierz klase: 1.wojownik 2.lucznik 3.mag\n";
 	cin >> prof;
 
-	switch (prof) {
-	case 1: {
-		Warrior gracz = Warrior(name);
-		gracz.writeStatistic();
-		cout << typeid(gracz).name() << "\n";
-		break;
-	}
-	case 2: {
-		Ranger gracz = Ranger(name);
-		gracz.writeStatistic();
-		cout << typeid(gracz).name() << "\n";
-		break;
-	}
-	case 3: {
-		Mage gracz = Mage(name);
-		gracz.writeStatistic();
-		cout << typeid(gracz).name() << "\n";
-		break;
-	}
+	//im = al_load_bitmap("\BitMaps\test.bmp");
+	/*switch (prof) {
+		case 1: {
+			Warrior gracz = Warrior(name);
+			gracz.writeStatistic();
+			cout << typeid(gracz).name() << "\n";
+			break;
+		}
+		case 2: {
+			Ranger gracz = Ranger(name);
+			gracz.writeStatistic();
+			cout << typeid(gracz).name() << "\n";
+			break;
+		}
+		case 3: {
+			Mage gracz = Mage(name);
+			gracz.writeStatistic();
+			cout << typeid(gracz).name() << "\n";
+			break;
+		}
 	}*/
 
-/*	Player* gracz;
+
+	Player* gracz;
 
 	if (prof == 1)
 		gracz = new Warrior(name);
 	else if(prof == 2)
-		Ranger gracz = Ranger(name);
+		gracz = new Ranger(name);
 	else 
-		Mage gracz = Mage(name);*/
+		gracz = new Mage(name);
 
+	Map map1;
+	map1.loadMap("1");
+	map1.drawMap();
+	map1.drawStatsGUI(gracz);
 
 	//Warrior gracz = Warrior("Mrowka");
 	
-	
-
-
-
-
-
-
-
-
-
 	//cout << gracz.getSkill()->getSkillName();
 
 	//SkillTree* asd = new SkillTree[3];

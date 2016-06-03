@@ -1,18 +1,18 @@
 #include "Map.h"
+#include "Player.h"
 #include <fstream>
 #include <conio.h>
-#include <cstdint>
 #include <windows.h>
 #include <cstdlib>
 #include <ctime>
 
-#define RAND_MAX  
+#define MAX_ENEMY 15
 
 Map::Map() {};
 
 void Map::randomEnemy() {
 	srand(time(NULL));
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < MAX_ENEMY; i++) {
 			int x = rand() % 29;
 			int y = rand() % 69;
 			if (mapArray[x][y] == 5) //jesli wylosowane pole jest traw¹ to ustaw wroga
@@ -41,73 +41,90 @@ void Map::loadMap(string lvl) {
 }
 
 //funkjca ustawiajaca kolor konsoli
-void Map::SetColorAndBackground(int ForgC, int BackC = 0)
+void Map::setColorAndBackground(int ForgC, int BackC = 0)
 {
 	WORD wColor = ((BackC & 0x0F) << 4) + (ForgC & 0x0F);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), wColor);
 }
 
+void Map::drawStatsGUI(Player* player1) {
 
+	for (int i = 0; i < MAX_WIDTH; i++)
+		cout << "-";
+	cout << "\n";
+	player1->writeStatistic();
+}
+
+//rysowanie mapy w konsoli
 void Map::drawMap() {
+	system("cls");
+	cout << getMapName() << "\n";
 	for (int x = 0; x < MAX_HEIGHT; x++) {
 		for (int y = 0; y < MAX_WIDTH; y++) {
 			switch (mapArray[x][y])
 			{
 				case M_PATH:
-					SetColorAndBackground(BROWN, BROWN);
+					setColorAndBackground(BROWN, BROWN);
 					cout << ' ';
 					break;
 				case M_WALL:
-					SetColorAndBackground(BLACK, WHITE);
+					setColorAndBackground(BLACK, WHITE);
 					cout << '#';
 					break;
 				case M_FENCE:
-					SetColorAndBackground(DARKGRAY, DARKGRAY);
+					setColorAndBackground(DARKGRAY, DARKGRAY);
 					cout << ' ';
 					break;
 				case M_DOOR:
-					SetColorAndBackground(YELLOW, YELLOW);
+					setColorAndBackground(YELLOW, YELLOW);
 					cout << ' ';
 					break;
 				case M_CLSDOOR:
-					SetColorAndBackground(YELLOW, RED);
+					setColorAndBackground(YELLOW, RED);
 					cout << ' ';
 					break;
 				case M_GRASS:
-					SetColorAndBackground(LIGHTGREEN, GREEN );
+					setColorAndBackground(LIGHTGREEN, GREEN );
 					cout << 'G';
 					break;
 				case M_ENEMY:
-					SetColorAndBackground(LIGHTGREEN, GREEN);
+					setColorAndBackground(LIGHTGREEN, GREEN);
 					cout << 'E';
 					break;
 				case M_NPC:
-					SetColorAndBackground(LIGHTCYAN, BLACK);
+					setColorAndBackground(LIGHTCYAN, BLACK);
 					cout << '?';
 					break;
 				case M_FLOOR:
-					SetColorAndBackground(BLACK, BLACK);
+					setColorAndBackground(BLACK, BLACK);
 					cout << ' ';
 					break;
 				case M_WATER:
-					SetColorAndBackground(BLUE, LIGHTBLUE);
+					setColorAndBackground(BLUE, LIGHTBLUE);
 					cout << '~';
 					break;
 				default:
-					SetColorAndBackground(BLACK, WHITE);
+					setColorAndBackground(BLACK, WHITE);
 					cout << (char)(mapArray[x][y]+48);
 					break;
 			}
 		}
 		cout << "\n";
 	}
-	SetColorAndBackground(WHITE, BLACK);
+	setColorAndBackground(WHITE, BLACK);
 }
+
+
+
 
 void Map::saveMap() {}
 
 void Map::resetMap() {}
 
-void Map::setMapName(string nName) {}
+void Map::setMapName(string nName) {
+	mapName = nName;
+}
 
-string Map::getMapName() { return mapName; }
+string Map::getMapName() {
+	return mapName;
+}

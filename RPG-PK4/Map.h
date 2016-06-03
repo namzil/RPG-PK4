@@ -2,9 +2,10 @@
 #define MAP_H
 #include <iostream>
 #include <string>
+#include "Player.h"
 
 #define MAX_WIDTH 70
-#define MAX_HEIGHT 35
+#define MAX_HEIGHT 30
 
 //definicje symboli na mapie
 #define M_PATH 0 //sciezka
@@ -17,7 +18,6 @@
 #define M_DOOR 7 //drzwi
 #define M_FLOOR 8 //pod³oga
 #define M_WATER 9 //woda
-
 
 //definicje kolorów konsoli
 #define BLACK			0
@@ -51,7 +51,8 @@ public:
 	void saveMap();
 	void resetMap();
 	void setMapName(string);
-	void SetColorAndBackground(int ForgC, int BackC);
+	void setColorAndBackground(int ForgC, int BackC);
+	void drawStatsGUI(Player*);
 	string getMapName();
 };
 
