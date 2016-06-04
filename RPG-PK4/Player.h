@@ -6,6 +6,9 @@
 #include "Weapon.h"
 #include "SkillTree.h"
 #include "Equipment.h"
+#include "NPC.h"
+#include "Enemy.h"
+
 #include <iostream>
 #include <string>
 
@@ -41,6 +44,7 @@ public:
 	~Player();
 
 	virtual void writeStatistic() = 0;
+	virtual void useSkill();
 
 	virtual void levelUp() = 0;
 

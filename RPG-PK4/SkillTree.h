@@ -7,6 +7,15 @@
 
 using namespace std;
 
-
+class SkillTree
+{
+private:
+	Skill basicAttack;
+	
+public:
+	SkillTree();
+	~SkillTree();
+	virtual void showSkills() = 0;
+};
 
 #endif

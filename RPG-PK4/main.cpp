@@ -3,12 +3,30 @@
 #include "Ranger.h"
 #include "Warrior.h"
 #include "SkillTree.h"
+#include "NPC.h"
+#include "Enemy.h"
 
 #include <iostream>
 #include <string>
 
 
 using namespace std;
+
+void fight(Player* gracz, Enemy* wilk)
+{
+	bool stillFighting = 1;
+	while (stillFighting)
+	{
+		cout << "Wybierz umiejetnosc\n";
+		gracz->useSkill();
+		if (wilk->getHealth() > 0)
+			gracz->getAgility();
+		else
+			stillFighting = 0;
+		
+		system("pause");
+	}
+}
 
 int main() {
 	string name;
@@ -39,6 +57,13 @@ int main() {
 		break;
 	}
 	}
+
+	Enemy wilk = Enemy("wilk");
+
+	wilk.setDamage(20);
+	wilk.setHealth(100);
+
+
 
 /*	Player* gracz;
 

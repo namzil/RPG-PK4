@@ -37,6 +37,10 @@ void Player::writeStatistic()
 	cout << "Obrazenia: " << damage << "\n";
 }
 
+void Player::useSkill()
+{
+}
+
 //sprawdzanie klasy gracza
 string Player::checkClass() {
 	if (proffesion == warrior)

@@ -19,7 +19,8 @@ public:
 	void writeStatistic();
 	void levelUp();
 
-	void useSkill(Skill);
+	void castBasicAttack(Enemy);
+	void useSkill(Enemy, Skill);
 };
 
 
