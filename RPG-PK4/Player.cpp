@@ -17,7 +17,7 @@ Player::Player(string n) {
 
 Player::~Player()
 {
-	delete [] skill;
+	//delete [] skill;
 	delete equipment;
 	delete armor;
 	delete weapon;
@@ -54,13 +54,14 @@ string Player::checkClass() {
 //zdobycie nastepnego poziomu
 void Player::levelUp()
 {
-	maxHealth = maxHealth*0.1;
+	maxHealth += maxHealth*0.1;
 	currentHealth = maxHealth;
-	strenght = strenght*0.1;
-	agility = agility*0.1;
-	intellect = intellect*0.1;
+	strenght += strenght*0.1;
+	agility += agility*0.1;
+	intellect += intellect*0.1;
 	level += 1;
 	experience -= experience;
+	updatePlayer();
 }
 
 //aktualizacja obrazen
@@ -82,8 +83,10 @@ void Player::updateDamage()
 		}
 }
 
+
 //aktualizacja postaci
 void Player::updatePlayer() {
+	updateSkills();
 	updateDamage();
 }
 
@@ -110,11 +113,6 @@ string Player::getName()
 Equipment * Player::getEquipment()
 {
 	return equipment;
-}
-
-Skill* Player::getSkill()
-{
-	return skill;
 }
 
 Weapon * Player::getWeapon()
@@ -181,11 +179,6 @@ void Player::setName(string n)
 void Player::setEquipment(Equipment* e)
 {
 	equipment = e;
-}
-
-void Player::setSkill(Skill* s)
-{
-	skill = s;
 }
 
 void Player::setLevel(int l)

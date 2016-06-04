@@ -18,9 +18,8 @@ public:
 	~Mage();
 	void writeStatistic();
 	void levelUp();
+	void updateSkills();
 
-	void castBasicAttack(Enemy);
-	void useSkill(Enemy, Skill);
 };
 
 

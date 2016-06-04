@@ -31,3 +31,7 @@ void Ranger::levelUp()
 	maxEnergy = maxEnergy*0.1;
 	currentEnergy = maxEnergy;
 }
+
+void Ranger::updateSkills()
+{
+}

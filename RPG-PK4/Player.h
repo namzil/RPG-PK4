@@ -25,7 +25,7 @@ protected:
 	string name;
 	prof proffesion;
 	Equipment* equipment = new Equipment();
-	Skill* skill = new Skill[3];
+//	Skill* skill = new Skill[3];
     Weapon* weapon;
 	Armor* armor;
 	int maxHealth;
@@ -51,15 +51,16 @@ public:
 	void takeDamage(int);
 	void dead();  //metoda do zrobienia
 	string checkClass();
-	void updateDamage();
 
-	void updatePlayer();
+	void updateDamage();
+	virtual void updateSkills() = 0;
+	virtual void updatePlayer();
 
 
 	//**********GETTERY I SETTERY************************
 	string getName();
 	Equipment* getEquipment();
-	Skill* getSkill();
+//	Skill* getSkill();
 	Weapon* getWeapon();
 	Armor* getArmor();
 	int getMaxHealth();
@@ -74,7 +75,7 @@ public:
 
 	void setName(string);
 	void setEquipment(Equipment*);
-	void setSkill(Skill*);
+//	void setSkill(Skill*);
 	void setWeapon(Weapon*);
 	void setArmor(Armor*);
 	void setMaxHealth(int);

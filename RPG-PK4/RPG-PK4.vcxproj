@@ -123,6 +123,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ranger.cpp" />
     <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="SkillTree.cpp" />
+    <ClCompile Include="SkillTreeWarrior.cpp" />
     <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Trader.cpp" />
     <ClCompile Include="Wand.cpp" />
@@ -140,6 +142,7 @@
     <ClInclude Include="Ranger.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="SkillTree.h" />
+    <ClInclude Include="SkillTreeWarrior.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Trader.h" />
     <ClInclude Include="Wand.h" />

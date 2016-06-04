@@ -32,22 +32,6 @@ void Mage::levelUp()
 	currentMana = maxMana;
 }
 
-
-void Mage::castBasicAttack(Enemy enemy)
+void Mage::updateSkills()
 {
-	enemy.setHealth(enemy.getHealth()-damage);
-}
-
-void Mage::useSkill(Enemy enemy, Skill s)
-{
-	if (s.getCanBeUsed())
-		if (currentMana >= s.getCost())
-		{
-			castBasicAttack(enemy);
-			currentMana -= s.getCost();
-		}
-		else
-			cout << "Za malo many";
-	else
-		cout << "Nie mozesz uzywac tej umiejetnosci";
 }

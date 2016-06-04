@@ -2,6 +2,7 @@
 #define SKILL_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,17 +14,20 @@ private:
 	int levelRequired;
 
 public:
-	Skill(string, int, int); //Do poprawek
+	Skill(string, int, int); 
 	~Skill();
-	void loadSkills(); //do zrobienia
+
+	void isAvalible(); 
 
 	string getSkillName();
 	bool getCanBeUsed();
 	int getCost();
+	int getLevelRequired();
 
 	void setSkillName(string);
 	void setCanBeUsed(bool);
 	void setCost(int);
+	void setLevelRequired(int);
 };
 
 

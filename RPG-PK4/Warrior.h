@@ -3,9 +3,9 @@
 
 
 #include "Player.h"
-#include "SkillTree.h"
+#include "SkillTreeWarrior.h"
 
-class Warrior : public Player {
+class Warrior : public Player, public SkillTreeWarrior {
 private:
 	int maxRage;
 	int currentRage;
@@ -15,6 +15,7 @@ public:
 	~Warrior();
 	void writeStatistic();
 	void levelUp();
+	void updateSkills();
 };
 
 

@@ -9,13 +9,14 @@ using namespace std;
 
 class SkillTree
 {
-private:
-	Skill basicAttack;
+protected:
+	Skill basicAttack = Skill("Atak podstawowy", 0, 0);
 	
 public:
 	SkillTree();
 	~SkillTree();
 	virtual void showSkills() = 0;
+	Skill getBasicAttack();
 };
 
 #endif

@@ -13,6 +13,7 @@ Warrior::Warrior(string n) : Player(n)
 	agility = 15;
 	intellect = 10;
 	updateDamage();
+	updateSkills();
 }
 
 Warrior::~Warrior()
@@ -25,9 +26,18 @@ void Warrior::writeStatistic()
 {
 	Player::writeStatistic();
 	cout << "Wscieklosc: " << currentRage << "\\" << maxRage << "\n";
+	showSkills();
 }
 
 void Warrior::levelUp()
 {
 	Player::levelUp();
+}
+
+void Warrior::updateSkills()
+{
+	if (level >= basicAttack.getLevelRequired())
+		basicAttack.setCanBeUsed(1);
+	if (level >= heroicStrike.getLevelRequired())
+		heroicStrike.setCanBeUsed(1);
 }

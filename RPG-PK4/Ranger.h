@@ -17,6 +17,7 @@ public:
 	~Ranger();
 	void writeStatistic();
 	void levelUp();
+	void updateSkills();
 
 };
 

@@ -14,11 +14,12 @@ Skill::~Skill()
 {
 }
 
-//chyba do usuniecia
-void Skill::loadSkills()
+void Skill::isAvalible()
 {
-
+	if (canBeUsed)
+		cout << skillName << "\n";
 }
+
 
 string Skill::getSkillName()
 {
@@ -35,6 +36,11 @@ int Skill::getCost()
 	return cost;
 }
 
+int Skill::getLevelRequired()
+{
+	return levelRequired;
+}
+
 void Skill::setSkillName(string s)
 {
 	skillName = s;
@@ -48,4 +54,9 @@ void Skill::setCanBeUsed(bool c)
 void Skill::setCost(int c)
 {
 	cost = c;
+}
+
+void Skill::setLevelRequired(int l)
+{
+	levelRequired = l;
 }

@@ -41,6 +41,10 @@ int main() {
 	case 1: {
 		Warrior gracz = Warrior(name);
 		gracz.writeStatistic();
+		gracz.levelUp();
+		gracz.writeStatistic();
+		gracz.levelUp();
+		gracz.writeStatistic();
 		cout << typeid(gracz).name() << "\n";
 		break;
 	}
@@ -62,7 +66,6 @@ int main() {
 
 	wilk.setDamage(20);
 	wilk.setHealth(100);
-
 
 
 /*	Player* gracz;
