@@ -58,7 +58,7 @@ int main() {
 	}
 	}
 
-	Enemy wilk;
+	Enemy wilk = Enemy("wilk");
 
 	wilk.setDamage(20);
 	wilk.setHealth(100);

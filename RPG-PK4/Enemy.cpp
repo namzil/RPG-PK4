@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-Enemy::Enemy()
+Enemy::Enemy(string n) : NPC(n)
 {
 }
 
@@ -28,6 +28,6 @@ void Enemy::setDamage(int d)
 	damage = d;
 }
 
-void Enemy::v()
+void Enemy::showName()
 {
 }

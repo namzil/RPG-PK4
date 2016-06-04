@@ -12,7 +12,7 @@ private:
 	int damage;
 
 public:
-	Enemy();
+	Enemy(string);
 	~Enemy();
 
 	int getHealth();
@@ -21,7 +21,7 @@ public:
 	void setHealth(int);
 	void setDamage(int);
 
-	void v();
+	void showName();
 };
 
 #endif

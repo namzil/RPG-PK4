@@ -12,9 +12,9 @@ private:
 	string name;
 
 public:
-	NPC();
+	NPC(string);
 	~NPC();
-	virtual void v() = 0;
+	virtual void showName() = 0;
 };
 
 #endif

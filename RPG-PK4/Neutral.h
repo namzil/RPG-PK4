@@ -7,8 +7,9 @@
 class Neutral : public NPC
 {
 public:
-	Neutral();
+	Neutral(string);
 	~Neutral();
+	void showName();
 };
 
 #endif

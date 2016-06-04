@@ -10,8 +10,10 @@ private:
 	Equipment equipment;
 
 public:
-	Trader();
+	Trader(string);
 	~Trader();
+
+	void showName();
 };
 
 
