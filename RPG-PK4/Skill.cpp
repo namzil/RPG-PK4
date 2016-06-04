@@ -2,11 +2,12 @@
 
 
 //kostruktor
-Skill::Skill()
+Skill::Skill(string n, int c, int l)
 {
-	skillName = "Niedostepne";
+	skillName = n;
 	canBeUsed = 0;
-	cost = 0;
+	cost = c;
+	levelRequired = l;
 }
 
 Skill::~Skill()
