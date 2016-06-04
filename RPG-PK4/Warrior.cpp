@@ -12,8 +12,7 @@ Warrior::Warrior(string n) : Player(n)
 	strenght = 25;
 	agility = 15;
 	intellect = 10;
-	updateDamage();
-	updateSkills();
+	updatePlayer();
 }
 
 Warrior::~Warrior()

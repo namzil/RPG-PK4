@@ -42,6 +42,7 @@ int main() {
 		Warrior gracz = Warrior(name);
 		gracz.writeStatistic();
 		gracz.levelUp();
+		cout << endl;
 		gracz.writeStatistic();
 		gracz.levelUp();
 		gracz.writeStatistic();
@@ -51,11 +52,15 @@ int main() {
 	case 2: {
 		Ranger gracz = Ranger(name);
 		gracz.writeStatistic();
+		gracz.levelUp();
+		gracz.writeStatistic();
 		cout << typeid(gracz).name() << "\n";
 		break;
 	}
 	case 3: {
 		Mage gracz = Mage(name);
+		gracz.writeStatistic();
+		gracz.levelUp();
 		gracz.writeStatistic();
 		cout << typeid(gracz).name() << "\n";
 		break;

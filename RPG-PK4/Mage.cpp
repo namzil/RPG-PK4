@@ -11,7 +11,7 @@ Mage::Mage(string n) : Player (n)
 	intellect = 30;
 	agility = 10;
 	strenght = 10;
-	updateDamage();
+	updatePlayer();
 }
 
 Mage::~Mage()
@@ -23,15 +23,22 @@ void Mage::writeStatistic()
 {
 	Player::writeStatistic();
 	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
+	showSkills();
 }
 
 void Mage::levelUp()
 {
 	Player::levelUp();
-	maxMana = maxMana*0.1;
+	maxMana += maxMana*0.1;
 	currentMana = maxMana;
 }
 
 void Mage::updateSkills()
 {
+	if (level >= basicAttack.getLevelRequired())
+		basicAttack.setCanBeUsed(1);
+	if (level >= heal.getLevelRequired())
+		heal.setCanBeUsed(1);
+	if (level >= fireBlast.getLevelRequired())
+		fireBlast.setCanBeUsed(1);
 }

@@ -11,7 +11,7 @@ Ranger::Ranger(string n) : Player(n)
 	agility = 20;
 	strenght = 15;
 	intellect = 15;
-	updateDamage();
+	updatePlayer();
 }
 
 Ranger::~Ranger()
@@ -23,15 +23,20 @@ void Ranger::writeStatistic()
 {
 	Player::writeStatistic();
 	cout << "Energia: " << currentEnergy << "\\" << maxEnergy << "\n";
+	showSkills();
 }
 
 void Ranger::levelUp()
 {
 	Player::levelUp();
-	maxEnergy = maxEnergy*0.1;
+	maxEnergy += maxEnergy*0.1;
 	currentEnergy = maxEnergy;
 }
 
 void Ranger::updateSkills()
 {
+	if (level >= basicAttack.getLevelRequired())
+		basicAttack.setCanBeUsed(1);
+	if (level >= headShot.getLevelRequired())
+		headShot.setCanBeUsed(1);
 }

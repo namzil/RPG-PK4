@@ -3,10 +3,10 @@
 
 
 #include "Player.h"
-#include "SkillTree.h"
+#include "SkillTreeMage.h"
 
 
-class Mage : public Player {
+class Mage : public Player, public SkillTreeMage {
 private:
 	int maxMana;
 	int currentMana;

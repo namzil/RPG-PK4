@@ -3,10 +3,10 @@
 
 
 #include "Player.h"
-#include "SkillTree.h"
+#include "SkillTreeRanger.h"
 
 
-class Ranger : public Player {
+class Ranger : public Player, public SkillTreeRanger {
 private:
 	int maxEnergy;
 	int currentEnergy;
