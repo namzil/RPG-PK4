@@ -10,6 +10,7 @@ class Enemy : public NPC {
 private:
 	int health;
 	int damage;
+	Equipment equipment;
 
 public:
 	Enemy(string);
@@ -17,9 +18,11 @@ public:
 
 	int getHealth();
 	int getDamage();
+	Equipment getEquipment();
 
 	void setHealth(int);
 	void setDamage(int);
+	void setEquipment(Equipment);
 
 	void showName();
 };

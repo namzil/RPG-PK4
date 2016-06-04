@@ -1,8 +1,10 @@
 #ifndef NPC_H
 #define NPC_H
 
+#include "Equipment.h"
 #include <iostream>
 #include <string>
+
 
 
 using namespace std;

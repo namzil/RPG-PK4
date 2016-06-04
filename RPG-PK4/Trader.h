@@ -13,6 +13,8 @@ public:
 	Trader(string);
 	~Trader();
 
+	Equipment getEquipment();
+	void setEqupipment(Equipment);
 	void showName();
 };
 
