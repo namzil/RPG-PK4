@@ -78,11 +78,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>C:\AllegroLib\allegro-5.0.10-msvc-11.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>pdcurses.lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <AdditionalDependencies>C:\AllegroLib\allegro-5.0.10-msvc-11.0\lib\allegro-5.0.10-monolith-md-debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>pdcurses.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\AllegroLib\allegro-5.0.10-msvc-11.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Bow.cpp" />
+    <ClCompile Include="Control.cpp" />
     <ClCompile Include="Eatable.cpp" />
     <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -139,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="Armor.h" />
     <ClInclude Include="Bow.h" />
+    <ClInclude Include="Control.h" />
     <ClInclude Include="Mage.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />

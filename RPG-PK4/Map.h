@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "Player.h"
+#include "curses.h"
 
 #define MAX_WIDTH 70
 #define MAX_HEIGHT 30
@@ -18,6 +19,7 @@
 #define M_DOOR 7 //drzwi
 #define M_FLOOR 8 //pod³oga
 #define M_WATER 9 //woda
+#define M_PLAYER 112-48 //gracz 'p'
 
 //definicje kolorów konsoli
 #define BLACK			0
@@ -37,23 +39,33 @@
 #define YELLOW			14
 #define WHITE			15
 
+#define MAX_ENEMY 15
+
 using namespace std;
 
 class Map {
 private:
-	string mapName;
+	char* mapName;
+	int playerX=1;
+	int playerY=2;
 public:
 	short int mapArray[MAX_HEIGHT][MAX_WIDTH];
 	Map();
 	void loadMap(string lvl);
 	void randomEnemy();
+	void setPlayer(int, int, Map*);
+	void drawField(int);
 	void drawMap();
 	void saveMap();
 	void resetMap();
-	void setMapName(string);
-	void setColorAndBackground(int ForgC, int BackC);
+	void setMapName(char*);
 	void drawStatsGUI(Player*);
-	string getMapName();
+	char* getMapName();
+	int getPlayerX();
+	int getPlayerY();
+	void setPlayerX(int);
+	void setPlayerY(int);
+
 };
 
 #endif // !MAP_H
