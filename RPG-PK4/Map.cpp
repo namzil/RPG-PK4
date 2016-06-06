@@ -7,11 +7,6 @@
 #include <ctime>
 #include "curses.h"
 
-
-
-
-
-
 Map::Map() {};
 
 void Map::randomEnemy() {
@@ -26,8 +21,6 @@ void Map::randomEnemy() {
 
 
 void Map::setPlayer(int dX, int dY, Map* objMap) {
-
-	//objMap->mapArray[playerX + dX][playerY + dY] = M_PLAYER;
 	int prevField = objMap->mapArray[playerX][playerY];
 	move(playerX + 2, playerY);
 	drawField(prevField);
@@ -43,10 +36,8 @@ void Map::loadMap(string lvl) {
 	char tmpIn;
 	inFile.open("..//Maps//Level" + lvl + ".txt");
 	if (inFile.good()) {
-		//char *nameLine = new char[50];
 		string nameLine;
 		getline(inFile, nameLine);
-		//setMapName(nameLine);
 		for (int x = 0; x < MAX_HEIGHT; x++) {
 			for (int y = 0; y < MAX_WIDTH; y++) {
 				inFile >> tmpIn; //czytanie pojedynczego znaku z pliku 
@@ -71,7 +62,6 @@ void Map::drawStatsGUI(Player* player1) {
 	printw("\n");
 	player1->writeStatistic();
 }
-
 
 void Map::drawField(int field) {
 	switch (field)
@@ -135,7 +125,6 @@ void Map::drawMap() {
 			drawField(mapArray[x][y]);
 		printw("\n");
 	}
-	
 }
 
 void Map::saveMap() {}
