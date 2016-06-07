@@ -12,7 +12,7 @@
 #define M_PATH 0 //sciezka
 #define M_WALL 1 //sciana
 #define M_FENCE 2 //drzwi
-#define M_CLSDOOR 3 //zamkniete drzwi
+#define M_TELEPORT 3 //zamkniete drzwi
 #define M_ENEMY 4 //wróg
 #define M_GRASS 5 //trawa
 #define M_NPC 6 //NPC

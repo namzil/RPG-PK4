@@ -18,6 +18,10 @@ bool Control::detectColision(int x, int y, Map* objMap) {
 		// ENEMY ACTION
 		return true;
 	}
+	else if (mapValue == M_TELEPORT) {
+		// TELEPORT ACTION
+		return true;
+	}
 	else if (mapValue == 'S'-48 || mapValue == 'H'-48 || mapValue == 'O'-48 || mapValue == 'P'-48) {
 		return false;
 	}else

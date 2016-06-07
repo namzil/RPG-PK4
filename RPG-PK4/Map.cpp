@@ -74,6 +74,7 @@ void Map::drawField(int field) {
 	init_pair(7, COLOR_RED, COLOR_YELLOW);
 	init_pair(8, COLOR_WHITE, COLOR_BLUE);
 	init_pair(9, COLOR_BLACK, COLOR_YELLOW);
+	init_pair(10, COLOR_BLACK, COLOR_RED);
 	switch (field)
 	{
 	case M_PATH:
@@ -100,10 +101,10 @@ void Map::drawField(int field) {
 		attroff(COLOR_PAIR(4));
 		break;
 
-	case M_CLSDOOR:
-		attron(COLOR_PAIR(4));
-		printw(" ");
-		attroff(COLOR_PAIR(4));
+	case M_TELEPORT:
+		attron(COLOR_PAIR(10));
+		printw("T");
+		attroff(COLOR_PAIR(10));
 		break;
 
 	case M_GRASS:
