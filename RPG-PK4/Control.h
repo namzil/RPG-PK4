@@ -8,8 +8,8 @@ class Control{
 private:
 
 public:
-	bool isPossible(int x, int y, Map*);
 	void catchEvents(Map*);
+	bool detectColision(int x, int y, Map*);
 };
 
 

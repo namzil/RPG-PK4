@@ -64,50 +64,82 @@ void Map::drawStatsGUI(Player* player1) {
 }
 
 void Map::drawField(int field) {
+	start_color();
+	init_pair(1,COLOR_YELLOW, COLOR_YELLOW);
+	init_pair(2, COLOR_WHITE, COLOR_BLACK);
+	init_pair(3, COLOR_BLACK, COLOR_BLACK);
+	init_pair(4, COLOR_CYAN, COLOR_CYAN);
+	init_pair(5, COLOR_WHITE, COLOR_GREEN);
+	init_pair(6, COLOR_RED, COLOR_BLACK);
+	init_pair(7, COLOR_RED, COLOR_YELLOW);
+	init_pair(8, COLOR_WHITE, COLOR_BLUE);
+	init_pair(9, COLOR_BLACK, COLOR_YELLOW);
 	switch (field)
 	{
 	case M_PATH:
+		attron(COLOR_PAIR(1));
 		printw(" ");
+		attroff(COLOR_PAIR(1));
 		break;
 
 	case M_WALL:
+		attron(COLOR_PAIR(2));
 		printw("#");
+		attroff(COLOR_PAIR(2));
 		break;
 
 	case M_FENCE:
-		printw(" ");
+		attron(COLOR_PAIR(9));
+		printw(".");
+		attroff(COLOR_PAIR(9));
 		break;
 
 	case M_DOOR:
+		attron(COLOR_PAIR(4));
 		printw(" ");
+		attroff(COLOR_PAIR(4));
 		break;
 
 	case M_CLSDOOR:
+		attron(COLOR_PAIR(4));
 		printw(" ");
+		attroff(COLOR_PAIR(4));
 		break;
 
 	case M_GRASS:
+		attron(COLOR_PAIR(5));
 		printw("G");
+		attroff(COLOR_PAIR(5));
 		break;
 
 	case M_ENEMY:
+		attron(COLOR_PAIR(5));
 		printw("E");
+		attroff(COLOR_PAIR(5));
 		break;
 
 	case M_NPC:
+		attron(COLOR_PAIR(6));
 		printw("?");
+		attroff(COLOR_PAIR(6));
 		break;
 
 	case M_FLOOR:
+		attron(COLOR_PAIR(3));
 		printw(" ");
+		attroff(COLOR_PAIR(3));
 		break;
 
 	case M_WATER:
+		attron(COLOR_PAIR(8));
 		printw("~");
+		attroff(COLOR_PAIR(8));
 		break;
 
 	case M_PLAYER:
+		attron(COLOR_PAIR(7));
 		printw("P");
+		attroff(COLOR_PAIR(7));
 		break;
 
 	default:

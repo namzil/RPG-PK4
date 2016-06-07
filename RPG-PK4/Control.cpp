@@ -2,10 +2,25 @@
 #include "Map.h"
 #include "curses.h"
 
-bool Control::isPossible(int x, int y, Map* objMap) {
-	if (x> MAX_HEIGHT || x < 1 || objMap->mapArray[x][y] == M_WALL || y > MAX_WIDTH || y < 1)
+bool Control::detectColision(int x, int y, Map* objMap) {
+
+	int mapValue = objMap->mapArray[x][y];
+	if (x> MAX_HEIGHT || x < 1  || y > MAX_WIDTH || y < 1)
 		return false;
-	else
+	else if (mapValue == M_WALL || mapValue == M_WATER || mapValue == M_FENCE) {
+		return false;
+	}
+	else if (mapValue == M_NPC) {
+		//NPC ACTION
+		return true;
+	}
+	else if (mapValue == M_ENEMY) {
+		// ENEMY ACTION
+		return true;
+	}
+	else if (mapValue == 'S'-48 || mapValue == 'H'-48 || mapValue == 'O'-48 || mapValue == 'P'-48) {
+		return false;
+	}else
 		return true;
 }
 
@@ -47,7 +62,7 @@ void Control::catchEvents(Map* objMap) {
 
 	int currX = objMap->getPlayerX();
 	int currY = objMap->getPlayerY();
-	if (isPossible(currX + nDeltaX, currY + nDeltaY, objMap))
+	if (detectColision(currX + nDeltaX, currY + nDeltaY, objMap))
 	{
 		// If allowed, move in the direction specified
 		objMap->setPlayer(nDeltaX, nDeltaY, objMap);

@@ -10,14 +10,11 @@
 #include <windows.h>
 #include "curses.h"
 
-
-
 using namespace std;
 
 int main() {	
 	initscr();
 	nocbreak();
-	start_color();
 	char* name = new char[30];
 	char* prof2 = new char[4];
 	printw("Podaj nazwe gracza\n");
