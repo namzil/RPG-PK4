@@ -6,27 +6,14 @@
 #include "NPC.h"
 #include "Enemy.h"
 
+#include "Map.h"
+#include "Control.h"
 #include <iostream>
 #include <string>
-
+#include <windows.h>
+#include "curses.h"
 
 using namespace std;
-
-void fight(Player* gracz, Enemy* wilk)
-{
-	bool stillFighting = 1;
-	while (stillFighting)
-	{
-		cout << "Wybierz umiejetnosc\n";
-		gracz->useSkill();
-		if (wilk->getHealth() > 0)
-			gracz->getAgility();
-		else
-			stillFighting = 0;
-		
-		system("pause");
-	}
-}
 
 int main() {
 	string name;
@@ -67,39 +54,34 @@ int main() {
 	}
 	}
 
-	Enemy wilk = Enemy("wilk");
-
-	wilk.setDamage(20);
-	wilk.setHealth(100);
-
-
-/*	Player* gracz;
-
 	if (prof == 1)
 		gracz = new Warrior(name);
 	else if(prof == 2)
-		Ranger gracz = Ranger(name);
+		gracz = new Ranger(name);
 	else 
-		Mage gracz = Mage(name);*/
+		gracz = new Mage(name);
 
+	Map* map1 = new Map();
+	map1->loadMap("1");
+	map1->drawMap();
+	refresh();
+	map1->drawStatsGUI(gracz);
+	bool flag = true;
 
-	//Warrior gracz = Warrior("Mrowka");
 	
-	
+	keypad(stdscr, TRUE);
+	Control controler;
+	while (flag = true) {
+		cbreak();
+		noecho();
+		controler.catchEvents(map1);
 
+	}
 
-
-
-
-
-
-
-
-	//cout << gracz.getSkill()->getSkillName();
-
-	//SkillTree* asd = new SkillTree[3];
-	//cout<<gracz.getDamage()<<"\n";
-	//delete[] asd;
+	delete name;
+	delete prof2;
 	system("pause");
 	return 0;
 }
+
+
