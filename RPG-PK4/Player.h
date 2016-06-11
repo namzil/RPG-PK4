@@ -22,7 +22,7 @@ class SkillTree;
 class Player {
 	//*********MEMBERS***************************
 protected:
-	char* name;
+	string name;
 	prof proffesion;
 	//Equipment* equip = new Equipment();
 	Skill* skill = new Skill[3];
@@ -39,19 +39,19 @@ protected:
 	double damage;
 
 public:
-	Player(char*);
+	Player(string);
 	~Player();
 
 	virtual void writeStatistic() = 0;
 	void levelUp();
 	void takeDamage(int);
 	void dead();  //metoda do zrobienia
-	char* checkClass();
+	string checkClass();
 	void updateDamage();
 
 	void updatePlayer();
 
-	char* getName();
+	string getName();
 	Equipment* getEquipment();
 	Skill* getSkill();
 	Weapon* getWeapon();
@@ -66,7 +66,7 @@ public:
 	double getGold();
 	double getDamage();
 
-	void setName(char *);
+	void setName(string);
 	//void setEquipment(Equipment);
 	void setSkill(Skill*);
 	void setMaxHealth(int);

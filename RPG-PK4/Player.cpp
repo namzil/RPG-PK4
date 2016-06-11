@@ -1,10 +1,7 @@
 #include "Player.h"
-#include "curses.h"
 
 //kostruktor
-Player::Player(char* n) {
-
-	name = new char[50];
+Player::Player(string n) {
 	name = n;
 	//maxHealth = 300;
 	//currentHealth = 300;
@@ -26,20 +23,19 @@ Player::~Player()
 //wypisywanie statystyk gracza
 void Player::writeStatistic()
 {
-	printw("Nazwa: %s ", name);
-	printw("Klasa: %s \n", checkClass());
-	printw("Poziom: %d ",level);
-	printw("Doswiadczenie: %d \\ 100 \n", experience);
-	printw("HP: %d \\ %d \n", currentHealth, maxHealth);
-	printw("Sila: %d ", strenght);
-	printw("Zrecznosc: %d \n", agility);
-	printw("Inteligencja: %d ", intellect);
-	printw("Obrazenia: %d \n", damage);
-	refresh();
+	cout << "Nazwa: " << name << "   ";
+	cout << "Klasa: " << checkClass() << "\n";
+	cout << "Poziom: " << level << "   ";
+	cout << "Doswiadczenie: " << experience << "\\" << 100 << "\n";
+	cout << "HP: " << currentHealth <<"\\" << maxHealth << "\n";
+	cout << "Sila: " << strenght << "   ";
+	cout << "Zrecznosc: " << agility << "\n";
+	cout << "Inteligencja: " << intellect << "   ";
+	cout << "Obrazenia: " << damage << "\n";
 }
 
 //sprawdzanie klasy gracza
-char* Player::checkClass() {
+string Player::checkClass() {
 	if (proffesion == warrior)
 		return "wojownik";
 	else if (proffesion == ranger)
@@ -95,7 +91,7 @@ void Player::dead()
 }
 
 
-char* Player::getName()
+string Player::getName()
 {
 	return name;
 }
@@ -155,7 +151,7 @@ double Player::getDamage()
 	return damage;
 }
 
-void Player::setName(char* n)
+void Player::setName(string n)
 {
 	name = n;
 }

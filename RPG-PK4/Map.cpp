@@ -22,9 +22,10 @@ void Map::randomEnemy() {
 
 void Map::setPlayer(int dX, int dY, Map* objMap) {
 	int prevField = objMap->mapArray[playerX][playerY];
-	move(playerX, playerY);
+	move(playerX + 2, playerY);
 	drawField(prevField);
-	move(playerX+dX, playerY+dY);
+	refresh();
+	move(playerX+2+dX, playerY+dY);
 	prevField = mapArray[playerX + dX][playerY + dY];
 	drawField(M_PLAYER);
 	refresh();
@@ -35,10 +36,12 @@ void Map::loadMap(string lvl) {
 	char tmpIn;
 	inFile.open("..//Maps//Level" + lvl + ".txt");
 	if (inFile.good()) {
+		string nameLine;
+		getline(inFile, nameLine);
 		for (int x = 0; x < MAX_HEIGHT; x++) {
 			for (int y = 0; y < MAX_WIDTH; y++) {
 				inFile >> tmpIn; //czytanie pojedynczego znaku z pliku 
-				mapArray[x][y] = (int)tmpIn - 48; //zapis do tablicy jako int
+				mapArray[x][y] = (short int)tmpIn - 48; //zapis do tablicy jako int
 				if (mapArray[x][y] == M_PLAYER) {
 					playerX = x;
 					playerY = y;
@@ -47,16 +50,13 @@ void Map::loadMap(string lvl) {
 			}
 		}
 		randomEnemy();
-		setPlayer(playerY, playerX, this);
 	}
 	else
 		printw("I/O Error");
-	inFile.close();
 }
 
 
 void Map::drawStatsGUI(Player* player1) {
-
 	for (int i = 0; i < MAX_WIDTH; i++)
 		printw("-");
 	printw("\n");
@@ -152,27 +152,17 @@ void Map::drawField(int field) {
 
 //rysowanie mapy w konsoli
 void Map::drawMap() {
-	clear();
-	move(0, 0);
+	system("cls");
 	for (int x = 0; x < MAX_HEIGHT; x++) {
-		for (int y = 0; y < MAX_WIDTH; y++) {
-			move(x, y);
+		for (int y = 0; y < MAX_WIDTH; y++)
 			drawField(mapArray[x][y]);
-		}
 		printw("\n");
 	}
-
 }
 
+void Map::saveMap() {}
 
-void Map::saveMap(char* fName) {
-	scr_dump(fName);
-}
-
-void Map::restoreMap(char* fName) {
-	scr_restore(fName);
-
-}
+void Map::resetMap() {}
 
 void Map::setMapName(char* nName) {
 	nName = new char[40];

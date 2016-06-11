@@ -13,7 +13,7 @@ private:
 
 
 public:
-	Ranger(char*);
+	Ranger(string);
 	~Ranger();
 	void writeStatistic();
 };

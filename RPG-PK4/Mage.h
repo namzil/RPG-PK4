@@ -14,7 +14,7 @@ private:
 	//SkillTree* skills;
 
 public:
-	Mage(char*);
+	Mage(string);
 	~Mage();
 	void writeStatistic();
 

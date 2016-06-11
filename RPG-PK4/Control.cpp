@@ -2,10 +2,10 @@
 #include "Map.h"
 #include "curses.h"
 
-bool Control::detectColision(int x, int y, Map* objMap, Player* p) {
+bool Control::detectColision(int x, int y, Map* objMap) {
 
 	int mapValue = objMap->mapArray[x][y];
-	if (x> MAX_HEIGHT-1 || x < 0  || y > MAX_WIDTH-1 || y < 0)
+	if (x> MAX_HEIGHT || x < 1  || y > MAX_WIDTH || y < 1)
 		return false;
 	else if (mapValue == M_WALL || mapValue == M_WATER || mapValue == M_FENCE) {
 		return false;
@@ -19,29 +19,7 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* p) {
 		return true;
 	}
 	else if (mapValue == M_TELEPORT) {
-		clear();
-		if (x == MAX_HEIGHT-1) {
-			//objMap->saveMap("Map1_dump");
-			objMap->loadMap("2");
-			objMap->drawMap();
-			objMap->drawStatsGUI(p);
-			//move(playerX, playerY);
-			refresh();
-		}
-		else if (y == MAX_WIDTH-1) {
-			objMap->loadMap("3");
-			objMap->drawMap();
-			objMap->drawStatsGUI(p);
-		//	objMap->drawStatsGUI(p);
-			refresh();
-		}
-		else {
-			objMap->loadMap("1");
-			objMap->drawMap();
-			objMap->drawStatsGUI(p);
-			refresh();
-		}
-			
+		// TELEPORT ACTION
 		return true;
 	}
 	else if (mapValue == 'S'-48 || mapValue == 'H'-48 || mapValue == 'O'-48 || mapValue == 'P'-48) {
@@ -50,7 +28,7 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* p) {
 		return true;
 }
 
-void Control::catchEvents(Map* objMap, Player* p) {
+void Control::catchEvents(Map* objMap) {
 	int nDeltaX=0;
 	int nDeltaY=0;
 
@@ -88,7 +66,7 @@ void Control::catchEvents(Map* objMap, Player* p) {
 
 	int currX = objMap->getPlayerX();
 	int currY = objMap->getPlayerY();
-	if (detectColision(currX + nDeltaX, currY + nDeltaY, objMap, p))
+	if (detectColision(currX + nDeltaX, currY + nDeltaY, objMap))
 	{
 		// If allowed, move in the direction specified
 		objMap->setPlayer(nDeltaX, nDeltaY, objMap);

@@ -1,10 +1,8 @@
 #include "Ranger.h"
-#include "curses.h"
 
 //kostruktor
-Ranger::Ranger(char* n) : Player(n)
+Ranger::Ranger(string n) : Player(n)
 {
-	name = n;
 	proffesion = ranger;
 	maxHealth = 300;
 	currentHealth = 300;
@@ -24,5 +22,5 @@ Ranger::~Ranger()
 void Ranger::writeStatistic()
 {
 	Player::writeStatistic();
-	printw("Energia: %d \\ %d \n", currentEnergy, maxEnergy);
+	cout << "Energia: " << currentEnergy << "\\" << maxEnergy << "\n";
 }

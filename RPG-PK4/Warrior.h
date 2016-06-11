@@ -11,7 +11,7 @@ private:
 	int currentRage;
 
 public:
-	Warrior(char*);
+	Warrior(string);
 	~Warrior();
 	void writeStatistic();
 };
