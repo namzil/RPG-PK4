@@ -54,12 +54,12 @@ int main() {
 	}
 	}
 
-	if (prof == 1)
+/*	if (prof == 1)
 		gracz = new Warrior(name);
 	else if(prof == 2)
 		gracz = new Ranger(name);
 	else 
-		gracz = new Mage(name);
+		gracz = new Mage(name);*/
 
 	Map* map1 = new Map();
 	map1->loadMap("1");
@@ -78,8 +78,8 @@ int main() {
 
 	}
 
-	delete name;
-	delete prof2;
+	//delete name;
+	//delete prof2;
 	system("pause");
 	return 0;
 }
