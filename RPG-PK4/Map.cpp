@@ -55,6 +55,14 @@ void Map::loadMap(string lvl) {
 		printw("I/O Error");
 }
 
+void Map::drawFight()
+{
+	for (int i = 0; i < MAX_WIDTH; i++)
+		printw("-");
+	printw("\n");
+	//player1->writeStatistic();
+}
+
 
 void Map::drawStatsGUI(Player* player1) {
 	for (int i = 0; i < MAX_WIDTH; i++)
@@ -168,6 +176,8 @@ void Map::setMapName(char* nName) {
 	nName = new char[40];
 	mapName = nName;
 }
+
+
 
 char* Map::getMapName() {
 	return mapName;

@@ -33,7 +33,7 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 	else if (mapValue == M_ENEMY) {
 		// ENEMY ACTION
 		//gameState = FIGHT;
-		fight(player);
+		objMap->fight(player);
 		return true;
 	}
 	else if (mapValue == M_TELEPORT) {
