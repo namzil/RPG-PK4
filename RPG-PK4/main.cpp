@@ -46,7 +46,7 @@ int main() {
 	while (flag = true) {
 		cbreak();
 		noecho();
-		controler.catchEvents(map1);
+		controler.catchEvents(map1,gracz);
 		
 	}
 

@@ -29,7 +29,7 @@ void Mage::writeStatistic()
 }
 
 
-void Mage::castBasicAttack(Enemy enemy)
+/*void Mage::castBasicAttack(Enemy enemy)
 {
 	enemy.setHealth(enemy.getHealth()-damage);
 }
@@ -46,4 +46,4 @@ void Mage::useSkill(Enemy enemy, Skill s)
 			cout << "Za malo many";
 	else
 		cout << "Nie mozesz uzywac tej umiejetnosci";
-}
+}*/

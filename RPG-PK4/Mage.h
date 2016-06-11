@@ -1,7 +1,6 @@
 #ifndef MAGE_H
 #define MAGE_H
 
-#include "Enemy.h"
 #include "Player.h"
 #include "SkillTree.h"
 
@@ -14,12 +13,10 @@ private:
 	//SkillTree* skills;
 
 public:
-	Mage(string);
+	Mage(char*);
 	~Mage();
 	void writeStatistic();
 
-	void castBasicAttack(Enemy);
-	void useSkill(Enemy, Skill);
 };
 
 
