@@ -12,7 +12,7 @@
 #define M_PATH 0 //sciezka
 #define M_WALL 1 //sciana
 #define M_FENCE 2 //drzwi
-#define M_TELEPORT 3 //zamkniete drzwi
+#define M_TELEPORT 3 //teleport
 #define M_ENEMY 4 //wróg
 #define M_GRASS 5 //trawa
 #define M_NPC 6 //NPC
@@ -38,8 +38,8 @@ public:
 	void setPlayer(int, int, Map*);
 	void drawField(int);
 	void drawMap();
-	void saveMap();
-	void resetMap();
+	void saveMap(char*);
+	void restoreMap(char*);
 	void setMapName(char*);
 	void drawStatsGUI(Player*);
 	char* getMapName();

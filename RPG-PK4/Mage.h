@@ -13,7 +13,7 @@ private:
 	SkillTree* skills;
 
 public:
-	Mage(string);
+	Mage(char*);
 	~Mage();
 	void writeStatistic();
 	int getCurrentMana();

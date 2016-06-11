@@ -1,8 +1,10 @@
 #include "Mage.h"
+#include "curses.h"
 
 //konstruktor
-Mage::Mage(string n) : Player (n)
+Mage::Mage(char* n) : Player (n)
 {
+	name = n;
 	proffesion = mage;
 	maxHealth = 200;
 	currentHealth = 200;
@@ -22,5 +24,5 @@ Mage::~Mage()
 void Mage::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
+	printw("Mana %d \\ %d \n", currentMana, maxMana);
 }

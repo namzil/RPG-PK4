@@ -1,9 +1,11 @@
 #include "Warrior.h"
+#include "curses.h"
 
 
 //kostruktor
-Warrior::Warrior(string n) : Player(n)
+Warrior::Warrior(char* n) : Player(n)
 {
+	name = n;
 	proffesion = warrior;
 	maxHealth = 400;
 	currentHealth = 400;
@@ -24,5 +26,5 @@ Warrior::~Warrior()
 void Warrior::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Wscieklosc: " << currentRage << "\\" << maxRage << "\n";
+	printw("Wscieklosc: %d \\ %d \n", currentRage, maxRage);
 }
