@@ -5,6 +5,7 @@
 #include "SkillTree.h"
 #include "NPC.h"
 #include "Enemy.h"
+#include "Game.h"
 
 #include "Map.h"
 #include "Control.h"
@@ -16,14 +17,14 @@
 using namespace std;
 
 int main() {
-	string name;
-	int prof;
+	//string name;
+	//int prof;
 
-	cout << "Podaj nazwe gracza\n";
-	cin >> name;
-	cout << "Wybierz klase: 1.wojownik 2.lucznik 3.mag\n";
-	cin >> prof;
-
+	//cout << "Podaj nazwe gracza\n";
+	//cin >> name;
+	//cout << "Wybierz klase: 1.wojownik 2.lucznik 3.mag\n";
+	//cin >> prof;
+/*
 	switch (prof) {
 	case 1: {
 		Warrior gracz = Warrior(name);
@@ -52,7 +53,7 @@ int main() {
 		cout << typeid(gracz).name() << "\n";
 		break;
 	}
-	}
+	}*/
 
 /*	if (prof == 1)
 		gracz = new Warrior(name);
@@ -60,15 +61,37 @@ int main() {
 		gracz = new Ranger(name);
 	else 
 		gracz = new Mage(name);*/
+	Game gra = Game();
+	initscr();
+	nocbreak();
+	char* name = new char[30];
+	int prof;
+	//char* prof2 = new char[4];
+	printw("Podaj nazwe gracza\n");
+	refresh();
+	getstr(name);
+	printw("Wybierz klase: 1.wojownik 2.lucznik 3.mag\n");
+	refresh();
+	cin >> prof;
+	//int prof = int(getstr(prof2));
+	Player* gracz;
+
+	if (prof == 1)
+		gracz = new Warrior(name);
+	else if (prof == 2)
+		gracz = new Ranger(name);
+	else
+		gracz = new Mage(name);
 
 	Map* map1 = new Map();
 	map1->loadMap("1");
 	map1->drawMap();
 	refresh();
 	map1->drawStatsGUI(gracz);
+	gra.fight(gracz);
 	bool flag = true;
 
-	
+
 	keypad(stdscr, TRUE);
 	Control controler;
 	while (flag = true) {
@@ -78,8 +101,12 @@ int main() {
 
 	}
 
-	//delete name;
-	//delete prof2;
+	delete name;
+//	delete prof2;
+
+	Player* gracz2;
+	//Game::fight(gracz2);
+	
 	system("pause");
 	return 0;
 }

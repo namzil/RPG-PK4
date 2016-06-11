@@ -13,8 +13,10 @@ private:
 	Equipment equipment;
 
 public:
-	Enemy(string);
+	Enemy(string, int, int);
 	~Enemy();
+
+	//Enemy spawnWolf();
 
 	int getHealth();
 	int getDamage();

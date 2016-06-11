@@ -1,6 +1,7 @@
 #include "Control.h"
 #include "Map.h"
 #include "curses.h"
+#include "Game.h"
 
 bool Control::detectColision(int x, int y, Map* objMap) {
 
@@ -16,6 +17,7 @@ bool Control::detectColision(int x, int y, Map* objMap) {
 	}
 	else if (mapValue == M_ENEMY) {
 		// ENEMY ACTION
+//		Game::fight();
 		return true;
 	}
 	else if (mapValue == M_TELEPORT) {
