@@ -3,7 +3,22 @@
 #include "curses.h"
 #include "Game.h"
 
-bool Control::detectColision(int x, int y, Map* objMap) {
+
+void Control::fight(Player* player)
+{
+	Enemy wolf = Enemy("Wilk", 100, 20);
+
+	while (player->getCurrentHealth() > 0 && wolf.getHealth() > 0)
+	{
+		cout << "HP: " << player->getCurrentHealth() << "\n" << "HP wilka: " << wolf.getHealth() << "\n";
+		wolf.setHealth(wolf.getHealth() - player->getDamage());
+		if (wolf.getHealth() > 0)
+			player->setCurrentHealth(player->getCurrentHealth() - wolf.getDamage());
+	}
+}
+
+
+bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 
 	int mapValue = objMap->mapArray[x][y];
 	if (x> MAX_HEIGHT || x < 1  || y > MAX_WIDTH || y < 1)
@@ -17,7 +32,8 @@ bool Control::detectColision(int x, int y, Map* objMap) {
 	}
 	else if (mapValue == M_ENEMY) {
 		// ENEMY ACTION
-//		Game::fight();
+		//gameState = FIGHT;
+		fight(player);
 		return true;
 	}
 	else if (mapValue == M_TELEPORT) {
@@ -30,7 +46,9 @@ bool Control::detectColision(int x, int y, Map* objMap) {
 		return true;
 }
 
-void Control::catchEvents(Map* objMap) {
+
+
+void Control::catchEvents(Map* objMap, Player* player) {
 	int nDeltaX=0;
 	int nDeltaY=0;
 
@@ -68,7 +86,7 @@ void Control::catchEvents(Map* objMap) {
 
 	int currX = objMap->getPlayerX();
 	int currY = objMap->getPlayerY();
-	if (detectColision(currX + nDeltaX, currY + nDeltaY, objMap))
+	if (detectColision(currX + nDeltaX, currY + nDeltaY, objMap, player))
 	{
 		// If allowed, move in the direction specified
 		objMap->setPlayer(nDeltaX, nDeltaY, objMap);

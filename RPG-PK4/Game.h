@@ -8,7 +8,7 @@ enum state { GAME, FIGHT, END };
 
 class Game
 {
-private:
+protected:
 	state gameState;
 
 

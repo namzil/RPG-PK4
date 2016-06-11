@@ -88,7 +88,7 @@ int main() {
 	map1->drawMap();
 	refresh();
 	map1->drawStatsGUI(gracz);
-	gra.fight(gracz);
+	//gra.fight(gracz);
 	bool flag = true;
 
 
@@ -97,14 +97,14 @@ int main() {
 	while (flag = true) {
 		cbreak();
 		noecho();
-		controler.catchEvents(map1);
+		controler.catchEvents(map1,gracz);
 
 	}
 
 	delete name;
 //	delete prof2;
 
-	Player* gracz2;
+	//Player* gracz2;
 	//Game::fight(gracz2);
 	
 	system("pause");
