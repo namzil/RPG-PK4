@@ -10,12 +10,20 @@ private:
 	string skillName;
 	bool canBeUsed;
 	int cost;
-	bool isHealingSpell;
+	int levelRequired;
 
 public:
-	Skill(); //Do poprawek
+	Skill(string, int, int); //Do poprawek
 	~Skill();
 	void loadSkills(); //do zrobienia
+
+	string getSkillName();
+	bool getCanBeUsed();
+	int getCost();
+
+	void setSkillName(string);
+	void setCanBeUsed(bool);
+	void setCost(int);
 };
 
 
