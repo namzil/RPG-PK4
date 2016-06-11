@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Mage.h"
+#include "Enemy.h"
 #include "Ranger.h"
 #include "Warrior.h"
 #include "SkillTree.h"

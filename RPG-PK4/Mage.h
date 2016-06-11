@@ -1,7 +1,7 @@
 #ifndef MAGE_H
 #define MAGE_H
 
-
+#include "Enemy.h"
 #include "Player.h"
 #include "SkillTree.h"
 
@@ -10,16 +10,19 @@ class Mage : public Player {
 private:
 	int maxMana;
 	int currentMana;
-	SkillTree* skills;
+
+	//SkillTree* skills;
 
 public:
 	Mage(char*);
 	~Mage();
 	void writeStatistic();
-	int getCurrentMana();
-	int getMaxMana();
+
+	void castBasicAttack(Enemy);
+	void useSkill(Enemy, Skill);
 };
 
 
 
 #endif
+

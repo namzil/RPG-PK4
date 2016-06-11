@@ -2,8 +2,9 @@
 #define PLAYER_H
 
 #include "Skill.h"
-//#include "Armor.h"
-//#include "Weapon.h"
+#include "Armor.h"
+#include "Weapon.h"
+#include "Enemy.h"
 #include "SkillTree.h"
 #include "Equipment.h"
 #include <iostream>
@@ -53,8 +54,8 @@ public:
 	char* getName();
 	Equipment* getEquipment();
 	Skill* getSkill();
-	//Weapon* getWeapon();
-	//Armor* getArmor();
+	Weapon* getWeapon();
+	Armor* getArmor();
 	int getMaxHealth();
 	int getCurrentHealth();
 	int getLevel();

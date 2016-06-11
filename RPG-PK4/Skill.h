@@ -13,6 +13,7 @@ private:
 	int levelRequired;
 
 public:
+	Skill() {};
 	Skill(string, int, int); //Do poprawek
 	~Skill();
 	void loadSkills(); //do zrobienia
@@ -20,7 +21,7 @@ public:
 	string getSkillName();
 	bool getCanBeUsed();
 	int getCost();
-
+//	string getSkillName();
 	void setSkillName(string);
 	void setCanBeUsed(bool);
 	void setCost(int);
