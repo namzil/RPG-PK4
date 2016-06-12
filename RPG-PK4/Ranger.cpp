@@ -40,3 +40,39 @@ void Ranger::updateSkills()
 	if (level >= headShot.getLevelRequired())
 		headShot.setCanBeUsed(1);
 }
+
+void Ranger::useSkill(char spell, Enemy & enemy)
+{
+	switch (spell)
+	{
+	case '1': {
+		castBasicAttack(enemy);
+		break;
+	}
+	case '2': {
+		castHeadShot(enemy);
+		break;
+	}
+	default: {
+
+	}
+	}
+	currentEnergy += 5;
+	if (currentEnergy > maxEnergy)
+		currentEnergy = maxEnergy;
+}
+
+
+void Ranger::castBasicAttack(Enemy & enemy)
+{
+	enemy.setHealth(enemy.getHealth() - damage);
+}
+
+void Ranger::castHeadShot(Enemy & enemy)
+{
+	if (currentEnergy >= headShot.getCost())
+	{
+		enemy.setHealth(enemy.getHealth() - damage * 2);
+		currentEnergy -= 20;
+	}
+}

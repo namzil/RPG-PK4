@@ -40,9 +40,6 @@ void Player::writeStatistic()
 	refresh();
 }
 
-void Player::useSkill()
-{
-}
 
 //sprawdzanie klasy gracza
 char* Player::checkClass() {
@@ -63,7 +60,7 @@ void Player::levelUp()
 	agility += agility*0.1;
 	intellect += intellect*0.1;
 	level += 1;
-	experience -= experience;
+	experience -= 100;
 	updatePlayer();
 }
 

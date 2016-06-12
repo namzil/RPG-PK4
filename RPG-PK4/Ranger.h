@@ -18,7 +18,10 @@ public:
 	void writeStatistic();
 	void levelUp();
 	void updateSkills();
-
+	
+	void castBasicAttack(Enemy&);
+	void castHeadShot(Enemy&);
+	void useSkill(char, Enemy&);
 };
 
 

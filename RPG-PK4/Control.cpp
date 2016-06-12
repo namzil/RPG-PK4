@@ -7,28 +7,20 @@
 void Control::fight(Player* player, Map* objMap)
 {
 	Enemy wolf = Enemy("Wilk", 100, 20);
-	int spell;
-
+	char spell;
+	clear();
 	printw("HP wilka: %d\n\n", wolf.getHealth());
 	player->writeStatistic();
 
 	while (player->getCurrentHealth() > 0 && wolf.getHealth() > 0)
 	{
-		clear();
+		
 		spell = getch();
-		switch (spell)
-		{
-			case 1:{
-				//player->cas
-				break;
-			}
-			case 2: {
-				break;
-			}
-		}
-		wolf.setHealth(wolf.getHealth() - player->getDamage());
+		player->useSkill(spell, wolf);
+		//wolf.setHealth(wolf.getHealth() - player->getDamage());
 		if (wolf.getHealth() > 0)
 			player->setCurrentHealth(player->getCurrentHealth() - wolf.getDamage());
+		clear();
 		printw("HP wilka: %d\n\n", wolf.getHealth());
 		player->writeStatistic();
 		//system("pause");
@@ -36,6 +28,9 @@ void Control::fight(Player* player, Map* objMap)
 	if (player->getCurrentHealth() > 0)
 	{
 		system("pause");
+		player->setExperience(player->getExperience() + 70);
+		if (player->getExperience() >= 100)
+			player->levelUp();
 		objMap->drawMap();
 		refresh();
 		objMap->drawStatsGUI(player);

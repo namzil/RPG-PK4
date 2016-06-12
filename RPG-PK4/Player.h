@@ -45,7 +45,7 @@ public:
 	~Player();
 
 	virtual void writeStatistic() = 0;
-	virtual void useSkill();
+	virtual void useSkill(char, Enemy &) = 0;
 
 	virtual void levelUp() = 0;
 

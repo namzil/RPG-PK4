@@ -46,12 +46,50 @@ void Mage::updateSkills()
 		fireBlast.setCanBeUsed(1);
 }
 
-void Mage::castBasicAtttack(Enemy enemy)
+void Mage::useSkill(char spell, Enemy & enemy)
+{
+	switch (spell)
+	{
+	case '1': {
+		castBasicAtttack(enemy);
+		break;
+	}
+	case '2': {
+		castHeal();
+		break;
+	}
+	case '3': {
+		castFireBlast(enemy);
+		break;
+	}
+	default: {
+
+	}
+	}
+}
+
+void Mage::castBasicAtttack(Enemy & enemy)
 {
 	enemy.setHealth(enemy.getHealth() - damage);
 }
 
 void Mage::castHeal()
 {
-	currentHealth += 30;
+	if (currentMana >= heal.getCost())
+	{
+		currentHealth += 30;
+		if (currentHealth > maxHealth)
+			currentHealth = maxHealth;
+		currentMana -= 20;
+	}
+	else
+	{
+		printw("Brak many");
+		refresh();
+	}
+}
+
+void Mage::castFireBlast(Enemy & enemy)
+{
+	enemy.setHealth(enemy.getHealth() - damage*2);
 }
