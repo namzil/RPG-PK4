@@ -70,9 +70,9 @@ void Ranger::castBasicAttack(Enemy & enemy)
 
 void Ranger::castHeadShot(Enemy & enemy)
 {
-	if (currentEnergy >= headShot.getCost())
+	if (currentEnergy >= headShot.getCost() && headShot.getCanBeUsed())
 	{
 		enemy.setHealth(enemy.getHealth() - damage * 2);
-		currentEnergy -= 20;
+		currentEnergy -= headShot.getCost();
 	}
 }

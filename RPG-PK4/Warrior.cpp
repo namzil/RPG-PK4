@@ -62,7 +62,7 @@ void Warrior::useSkill(char spell, Enemy & enemy)
 void Warrior::castBasicAttack(Enemy & enemy)
 {
 	enemy.setHealth(enemy.getHealth() - damage);
-	currentRage += 10;
+	currentRage += 5;
 	if (currentRage > maxRage)
 		currentRage = maxRage;
 }
@@ -72,6 +72,6 @@ void Warrior::castHeroicStrike(Enemy & enemy)
 	if (currentRage >= heroicStrike.getCost() && heroicStrike.getCanBeUsed())
 	{
 		enemy.setHealth(enemy.getHealth() - damage*2);
-		currentRage -= 15;
+		currentRage -= heroicStrike.getCost();
 	}
 }

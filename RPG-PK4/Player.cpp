@@ -10,6 +10,7 @@ Player::Player(char* n) {
 	//currentHealth = 300;
 	level = 0;
 	experience = 0;
+	expNextLevel = 100;
 	//strenght = 10;
 	//agility = 10;
 	//intellect = 10;
@@ -31,7 +32,7 @@ void Player::writeStatistic()
 	printw("Nazwa: %s ", name);
 	printw("Klasa: %s \n", checkClass());
 	printw("Poziom: %d ", level);
-	printw("Doswiadczenie: %d \\ 100 \n", experience);
+	printw("Doswiadczenie: %d \\ %d \n", experience, expNextLevel);
 	printw("HP: %d \\ %d \n", currentHealth, maxHealth);
 	printw("Sila: %d ", strenght);
 	printw("Zrecznosc: %d \n", agility);
@@ -60,7 +61,7 @@ void Player::levelUp()
 	agility += agility*0.1;
 	intellect += intellect*0.1;
 	level += 1;
-	experience -= 100;
+	expNextLevel *= 2;
 	updatePlayer();
 }
 
@@ -147,6 +148,11 @@ int Player::getExperience()
 	return experience;
 }
 
+int Player::getExpNextLevel()
+{
+	return expNextLevel;
+}
+
 int Player::getStrenght()
 {
 	return strenght;
@@ -190,6 +196,11 @@ void Player::setLevel(int l)
 void Player::setExperience(int e)
 {
 	experience = e;
+}
+
+void Player::setExpNextLevel(int exp)
+{
+	expNextLevel = exp;
 }
 
 void Player::setStrenght(int s)

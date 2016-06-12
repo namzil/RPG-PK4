@@ -29,7 +29,7 @@ void Control::fight(Player* player, Map* objMap)
 	{
 		system("pause");
 		player->setExperience(player->getExperience() + 70);
-		if (player->getExperience() >= 100)
+		if (player->getExperience() >= player->getExpNextLevel())
 			player->levelUp();
 		objMap->drawMap();
 		refresh();

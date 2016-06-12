@@ -33,6 +33,7 @@ protected:
 	int currentHealth;
 	int level;
 	int experience;
+	int expNextLevel;
 	int strenght;
 	int agility;
 	int intellect;
@@ -66,6 +67,7 @@ public:
 	int getCurrentHealth();
 	int getLevel();
 	int getExperience();
+	int getExpNextLevel();
 	int getStrenght();
 	int getAgility();
 	int getIntellect();
@@ -81,6 +83,7 @@ public:
 	void setCurrentHealth(int);
 	void setLevel(int);
 	void setExperience(int);
+	void setExpNextLevel(int);
 	void setStrenght(int);
 	void setAgility(int);
 	void setIntellect(int);

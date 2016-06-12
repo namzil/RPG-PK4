@@ -80,7 +80,7 @@ void Mage::castHeal()
 		currentHealth += 30;
 		if (currentHealth > maxHealth)
 			currentHealth = maxHealth;
-		currentMana -= 20;
+		currentMana -= heal.getCost();
 	}
 	else
 	{
@@ -91,5 +91,9 @@ void Mage::castHeal()
 
 void Mage::castFireBlast(Enemy & enemy)
 {
-	enemy.setHealth(enemy.getHealth() - damage*2);
+	if (currentMana >= fireBlast.getCost() && fireBlast.getCanBeUsed())
+	{
+		enemy.setHealth(enemy.getHealth() - damage * 2);
+		currentMana -= fireBlast.getCost();
+	}
 }
