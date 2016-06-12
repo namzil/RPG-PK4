@@ -1,8 +1,11 @@
 #include "Mage.h"
+#include "curses.h"
+#include "Enemy.h"
 
 //konstruktor
-Mage::Mage(string n) : Player (n)
+Mage::Mage(char* n) : Player (n)
 {
+	name = n;
 	proffesion = mage;
 	maxHealth = 200;
 	currentHealth = 200;
@@ -22,5 +25,25 @@ Mage::~Mage()
 void Mage::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
+	printw("Mana %d \\ %d \n", currentMana, maxMana);
 }
+
+
+/*void Mage::castBasicAttack(Enemy enemy)
+{
+	enemy.setHealth(enemy.getHealth()-damage);
+}
+
+void Mage::useSkill(Enemy enemy, Skill s)
+{
+	if (s.getCanBeUsed())
+		if (currentMana >= s.getCost())
+		{
+			castBasicAttack(enemy);
+			currentMana -= s.getCost();
+		}
+		else
+			cout << "Za malo many";
+	else
+		cout << "Nie mozesz uzywac tej umiejetnosci";
+}*/

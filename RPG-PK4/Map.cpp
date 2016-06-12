@@ -11,21 +11,20 @@ Map::Map() {};
 
 void Map::randomEnemy() {
 	srand(time(NULL));
-		for (int i = 0; i < MAX_ENEMY; i++) {
-			int x = rand() % 29;
-			int y = rand() % 69;
-			if (mapArray[x][y] == 5) //jesli wylosowane pole jest traw¹ to ustaw wroga
-				mapArray[x][y] = 4;
-		}
+	for (int i = 0; i < MAX_ENEMY; i++) {
+		int x = rand() % 29;
+		int y = rand() % 69;
+		if (mapArray[x][y] == 5) //jesli wylosowane pole jest traw¹ to ustaw wroga
+			mapArray[x][y] = 4;
+	}
 }
 
 
 void Map::setPlayer(int dX, int dY, Map* objMap) {
 	int prevField = objMap->mapArray[playerX][playerY];
-	move(playerX + 2, playerY);
+	move(playerX, playerY);
 	drawField(prevField);
-	refresh();
-	move(playerX+2+dX, playerY+dY);
+	move(playerX + dX, playerY + dY);
 	prevField = mapArray[playerX + dX][playerY + dY];
 	drawField(M_PLAYER);
 	refresh();
@@ -36,12 +35,10 @@ void Map::loadMap(string lvl) {
 	char tmpIn;
 	inFile.open("..//Maps//Level" + lvl + ".txt");
 	if (inFile.good()) {
-		string nameLine;
-		getline(inFile, nameLine);
 		for (int x = 0; x < MAX_HEIGHT; x++) {
 			for (int y = 0; y < MAX_WIDTH; y++) {
 				inFile >> tmpIn; //czytanie pojedynczego znaku z pliku 
-				mapArray[x][y] = (short int)tmpIn - 48; //zapis do tablicy jako int
+				mapArray[x][y] = (int)tmpIn - 48; //zapis do tablicy jako int
 				if (mapArray[x][y] == M_PLAYER) {
 					playerX = x;
 					playerY = y;
@@ -50,13 +47,16 @@ void Map::loadMap(string lvl) {
 			}
 		}
 		randomEnemy();
+		setPlayer(playerY, playerX, this);
 	}
 	else
 		printw("I/O Error");
+	inFile.close();
 }
 
 
 void Map::drawStatsGUI(Player* player1) {
+
 	for (int i = 0; i < MAX_WIDTH; i++)
 		printw("-");
 	printw("\n");
@@ -65,7 +65,7 @@ void Map::drawStatsGUI(Player* player1) {
 
 void Map::drawField(int field) {
 	start_color();
-	init_pair(1,COLOR_YELLOW, COLOR_YELLOW);
+	init_pair(1, COLOR_YELLOW, COLOR_YELLOW);
 	init_pair(2, COLOR_WHITE, COLOR_BLACK);
 	init_pair(3, COLOR_BLACK, COLOR_BLACK);
 	init_pair(4, COLOR_CYAN, COLOR_CYAN);
@@ -152,17 +152,27 @@ void Map::drawField(int field) {
 
 //rysowanie mapy w konsoli
 void Map::drawMap() {
-	system("cls");
+	clear();
+	move(0, 0);
 	for (int x = 0; x < MAX_HEIGHT; x++) {
-		for (int y = 0; y < MAX_WIDTH; y++)
+		for (int y = 0; y < MAX_WIDTH; y++) {
+			move(x, y);
 			drawField(mapArray[x][y]);
+		}
 		printw("\n");
 	}
+
 }
 
-void Map::saveMap() {}
 
-void Map::resetMap() {}
+void Map::saveMap(char* fName) {
+	scr_dump(fName);
+}
+
+void Map::restoreMap(char* fName) {
+	scr_restore(fName);
+
+}
 
 void Map::setMapName(char* nName) {
 	nName = new char[40];
@@ -176,7 +186,7 @@ char* Map::getMapName() {
 int Map::getPlayerX() {
 	return playerX;
 }
-int Map::getPlayerY(){
+int Map::getPlayerY() {
 	return playerY;
 }
 

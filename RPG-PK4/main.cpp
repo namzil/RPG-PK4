@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Mage.h"
+#include "Enemy.h"
 #include "Ranger.h"
 #include "Warrior.h"
 #include "SkillTree.h"
@@ -16,18 +17,18 @@ int main() {
 	initscr();
 	nocbreak();
 	char* name = new char[30];
-	char* prof2 = new char[4];
+	char prof;
 	printw("Podaj nazwe gracza\n");
 	refresh();
 	getstr(name);
 	printw("Wybierz klase: 1.wojownik 2.lucznik 3.mag\n");
 	refresh();
-	int prof = int(getstr(prof2));
+	prof = getch();
 	Player* gracz;
 
-	if (prof == 1)
+	if (prof == '1')
 		gracz = new Warrior(name);
-	else if(prof == 2)
+	else if(prof == '2')
 		gracz = new Ranger(name);
 	else 
 		gracz = new Mage(name);
@@ -45,12 +46,11 @@ int main() {
 	while (flag = true) {
 		cbreak();
 		noecho();
-		controler.catchEvents(map1);
+		controler.catchEvents(map1,gracz);
 		
 	}
 
 	delete name;
-	delete prof2;
 	system("pause");
 	return 0;
 }
