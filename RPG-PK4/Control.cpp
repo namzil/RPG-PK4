@@ -7,23 +7,40 @@
 void Control::fight(Player* player, Map* objMap)
 {
 	Enemy wolf = Enemy("Wilk", 100, 20);
-	refresh();
-	system("cls");
+	int spell;
+
+	printw("HP wilka: %d\n\n", wolf.getHealth());
+	player->writeStatistic();
+
 	while (player->getCurrentHealth() > 0 && wolf.getHealth() > 0)
 	{
-	//	cout<<player->getCurrentHealth();
-		cout << "HP: " << player->getCurrentHealth() << "\nHP wilka: " << wolf.getHealth() << "\n";
+		clear();
+		spell = getch();
+		switch (spell)
+		{
+			case 1:{
+				//player->cas
+				break;
+			}
+			case 2: {
+				break;
+			}
+		}
 		wolf.setHealth(wolf.getHealth() - player->getDamage());
 		if (wolf.getHealth() > 0)
 			player->setCurrentHealth(player->getCurrentHealth() - wolf.getDamage());
+		printw("HP wilka: %d\n\n", wolf.getHealth());
+		player->writeStatistic();
+		//system("pause");
 	}
-	system("pause");
-	//refresh();
-	//system("cls");
-	//refresh();
-	objMap->drawMap();
-	refresh();
-	objMap->drawStatsGUI(player);
+	if (player->getCurrentHealth() > 0)
+	{
+		system("pause");
+		objMap->drawMap();
+		refresh();
+		objMap->drawStatsGUI(player);
+	}
+	else player->dead();
 }
 
 
@@ -51,21 +68,21 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 			//objMap->saveMap("Map1_dump");
 			objMap->loadMap("2");
 			objMap->drawMap();
-			objMap->drawStatsGUI(p);
+			objMap->drawStatsGUI(player);
 			//move(playerX, playerY);
 			refresh();
 		}
 		else if (y == MAX_WIDTH - 1) {
 			objMap->loadMap("3");
 			objMap->drawMap();
-			objMap->drawStatsGUI(p);
+			objMap->drawStatsGUI(player);
 			//	objMap->drawStatsGUI(p);
 			refresh();
 		}
 		else {
 			objMap->loadMap("1");
 			objMap->drawMap();
-			objMap->drawStatsGUI(p);
+			objMap->drawStatsGUI(player);
 			refresh();
 		}
 

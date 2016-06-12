@@ -35,7 +35,9 @@ Equipment Enemy::getEquipment()
 
 void Enemy::setHealth(int h)
 {
-	health = h;
+	if (h > 0)
+		health = h;
+	else health = 0;
 }
 
 void Enemy::setDamage(int d)

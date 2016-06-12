@@ -72,7 +72,7 @@ public:
 	double getGold();
 	int getDamage();
 
-	void setName(string);
+	void setName(char*);
 	void setEquipment(Equipment*);
 //	void setSkill(Skill*);
 	void setWeapon(Weapon*);

@@ -20,6 +20,8 @@ public:
 	void writeStatistic();
 	void levelUp();
 	void updateSkills();
+	void castBasicAtttack(Enemy);
+	void castHeal();
 
 };
 

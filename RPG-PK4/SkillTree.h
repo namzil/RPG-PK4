@@ -17,6 +17,7 @@ public:
 	~SkillTree();
 	virtual void showSkills() = 0;
 	Skill getBasicAttack();
+	//void castBasicAttack(Enemy);
 };
 
 #endif

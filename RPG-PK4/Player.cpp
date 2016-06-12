@@ -102,7 +102,9 @@ void Player::takeDamage(int damage)
 
 void Player::dead()
 {
-	//koniec gry
+	clear();
+	printw("Umarnales. Koniec gry...");
+	//refresh();
 }
 
 
@@ -215,7 +217,9 @@ void Player::setGold(double g)
 
 void Player::setCurrentHealth(int h)
 {
-	currentHealth = h;
+	if (h > 0)
+		currentHealth = h;
+	else currentHealth = 0;
 }
 
 void Player::setMaxHealth(int mH)

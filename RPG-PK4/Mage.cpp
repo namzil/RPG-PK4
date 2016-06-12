@@ -45,8 +45,13 @@ void Mage::updateSkills()
 	if (level >= fireBlast.getLevelRequired())
 		fireBlast.setCanBeUsed(1);
 }
-		else
-			cout << "Za malo many";
-	else
-		cout << "Nie mozesz uzywac tej umiejetnosci";
-}*/
+
+void Mage::castBasicAtttack(Enemy enemy)
+{
+	enemy.setHealth(enemy.getHealth() - damage);
+}
+
+void Mage::castHeal()
+{
+	currentHealth += 30;
+}
