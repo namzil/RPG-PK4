@@ -1,8 +1,11 @@
 #include "Mage.h"
+#include "curses.h"
+#include "Enemy.h"
 
 //konstruktor
-Mage::Mage(string n) : Player (n)
+Mage::Mage(char* n) : Player (n)
 {
+	name = n;
 	proffesion = mage;
 	maxHealth = 200;
 	currentHealth = 200;
@@ -42,3 +45,8 @@ void Mage::updateSkills()
 	if (level >= fireBlast.getLevelRequired())
 		fireBlast.setCanBeUsed(1);
 }
+		else
+			cout << "Za malo many";
+	else
+		cout << "Nie mozesz uzywac tej umiejetnosci";
+}*/

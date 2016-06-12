@@ -12,7 +12,7 @@
 #define M_PATH 0 //sciezka
 #define M_WALL 1 //sciana
 #define M_FENCE 2 //drzwi
-#define M_TELEPORT 3 //zamkniete drzwi
+#define M_TELEPORT 3 //teleport
 #define M_ENEMY 4 //wróg
 #define M_GRASS 5 //trawa
 #define M_NPC 6 //NPC
@@ -28,8 +28,8 @@ using namespace std;
 class Map {
 private:
 	char* mapName;
-	int playerX=1;
-	int playerY=2;
+	int playerX = 1;
+	int playerY = 2;
 public:
 	short int mapArray[MAX_HEIGHT][MAX_WIDTH];
 	Map();
@@ -38,8 +38,8 @@ public:
 	void setPlayer(int, int, Map*);
 	void drawField(int);
 	void drawMap();
-	void saveMap();
-	void resetMap();
+	void saveMap(char*);
+	void restoreMap(char*);
 	void setMapName(char*);
 	void drawFight(Enemy);//do zrobienia
 	void drawStatsGUI(Player*);

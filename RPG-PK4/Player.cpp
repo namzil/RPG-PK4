@@ -1,7 +1,10 @@
 #include "Player.h"
+#include "curses.h"
 
 //kostruktor
-Player::Player(string n) {
+Player::Player(char* n) {
+
+	name = new char[50];
 	name = n;
 	//maxHealth = 300;
 	//currentHealth = 300;
@@ -25,15 +28,16 @@ Player::~Player()
 //wypisywanie statystyk gracza
 void Player::writeStatistic()
 {
-	cout << "Nazwa: " << name << "   ";
-	cout << "Klasa: " << checkClass() << "\n";
-	cout << "Poziom: " << level << "   ";
-	cout << "Doswiadczenie: " << experience << "\\" << 100 << "\n";
-	cout << "HP: " << currentHealth <<"\\" << maxHealth << "\n";
-	cout << "Sila: " << strenght << "   ";
-	cout << "Zrecznosc: " << agility << "\n";
-	cout << "Inteligencja: " << intellect << "   ";
-	cout << "Obrazenia: " << damage << "\n";
+	printw("Nazwa: %s ", name);
+	printw("Klasa: %s \n", checkClass());
+	printw("Poziom: %d ", level);
+	printw("Doswiadczenie: %d \\ 100 \n", experience);
+	printw("HP: %d \\ %d \n", currentHealth, maxHealth);
+	printw("Sila: %d ", strenght);
+	printw("Zrecznosc: %d \n", agility);
+	printw("Inteligencja: %d ", intellect);
+	printw("Obrazenia: %d \n", damage);
+	refresh();
 }
 
 void Player::useSkill()
@@ -41,7 +45,7 @@ void Player::useSkill()
 }
 
 //sprawdzanie klasy gracza
-string Player::checkClass() {
+char* Player::checkClass() {
 	if (proffesion == warrior)
 		return "wojownik";
 	else if (proffesion == ranger)
@@ -67,16 +71,16 @@ void Player::levelUp()
 void Player::updateDamage()
 {
 	switch (proffesion) {
-		case warrior:{  
-			damage = (strenght * 10 + agility*3 + intellect)/10 ;
+	case warrior: {
+		damage = (strenght * 10 + agility * 3 + intellect) / 10;
 			break;
 		}
 		case ranger: {
-			damage = (agility * 10 + strenght * 2 + intellect * 2)/10;
+		damage = (agility * 10 + strenght * 2 + intellect * 2) / 10;
 			break;
 		}
 		case mage: {
-			damage = (intellect * 8 + strenght + agility*3)/10;
+		damage = (intellect * 8 + strenght + agility * 3) / 10;
 			break;
 		}
 		}
@@ -104,7 +108,7 @@ void Player::dead()
 
 //************************GETTERY********************************
 
-string Player::getName()
+char* Player::getName()
 {
 	return name;
 }
@@ -169,8 +173,7 @@ int Player::getDamage()
 	return damage;
 }
 
-//*************************SETTERY***********************************
-void Player::setName(string n)
+void Player::setName(char* n)
 {
 	name = n;
 }

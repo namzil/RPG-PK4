@@ -11,7 +11,7 @@ class SkillTree
 {
 protected:
 	Skill basicAttack = Skill("Atak podstawowy", 0, 0);
-	
+
 public:
 	SkillTree();
 	~SkillTree();

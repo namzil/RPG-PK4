@@ -1,7 +1,6 @@
 #ifndef MAGE_H
 #define MAGE_H
 
-
 #include "Player.h"
 #include "SkillTreeMage.h"
 
@@ -13,8 +12,10 @@ private:
 
 	//SkillTree* skills;
 
+	//SkillTree* skills;
+
 public:
-	Mage(string);
+	Mage(char*);
 	~Mage();
 	void writeStatistic();
 	void levelUp();
@@ -25,3 +26,4 @@ public:
 
 
 #endif
+

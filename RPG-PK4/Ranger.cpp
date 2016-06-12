@@ -1,7 +1,7 @@
 #include "Ranger.h"
 
 //kostruktor
-Ranger::Ranger(string n) : Player(n)
+Ranger::Ranger(char* n) : Player(n)
 {
 	proffesion = ranger;
 	maxHealth = 300;

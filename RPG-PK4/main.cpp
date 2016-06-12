@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Mage.h"
+#include "Enemy.h"
 #include "Ranger.h"
 #include "Warrior.h"
 #include "SkillTree.h"
@@ -16,7 +17,7 @@
 
 using namespace std;
 
-int main() {
+int main() {	
 	//string name;
 	//int prof;
 
@@ -65,22 +66,20 @@ int main() {
 	initscr();
 	nocbreak();
 	char* name = new char[30];
-	//int prof;
-	char* prof2 = new char[4];
+	char prof;
 	printw("Podaj nazwe gracza\n");
 	refresh();
 	getstr(name);
 	printw("Wybierz klase: 1.wojownik 2.lucznik 3.mag\n");
 	refresh();
-	//cin >> prof;
-	int prof = int(getstr(prof2));
+	prof = getch();
 	Player* gracz;
 
-	if (prof == 1)
+	if (prof == '1')
 		gracz = new Warrior(name);
-	else if (prof == 2)
+	else if(prof == '2')
 		gracz = new Ranger(name);
-	else
+	else 
 		gracz = new Mage(name);
 
 	Map* map1 = new Map();
@@ -90,7 +89,7 @@ int main() {
 	map1->drawStatsGUI(gracz);
 	//gra.fight(gracz);
 	bool flag = true;
-
+	
 
 	keypad(stdscr, TRUE);
 	Control controler;
@@ -98,15 +97,10 @@ int main() {
 		cbreak();
 		noecho();
 		controler.catchEvents(map1,gracz);
-
+		
 	}
 
 	delete name;
-	delete prof2;
-
-	//Player* gracz2;
-	//Game::fight(gracz2);
-	
 	system("pause");
 	return 0;
 }

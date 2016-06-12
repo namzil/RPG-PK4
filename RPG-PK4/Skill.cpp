@@ -60,3 +60,33 @@ void Skill::setLevelRequired(int l)
 {
 	levelRequired = l;
 }
+
+string Skill::getSkillName()
+{
+	return skillName;
+}
+
+bool Skill::getCanBeUsed()
+{
+	return canBeUsed;
+}
+
+int Skill::getCost()
+{
+	return cost;
+}
+
+void Skill::setSkillName(string s)
+{
+	skillName = s;
+}
+
+void Skill::setCanBeUsed(bool c)
+{
+	canBeUsed = c;
+}
+
+void Skill::setCost(int c)
+{
+	cost = c;
+}

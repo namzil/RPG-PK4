@@ -30,7 +30,7 @@ void Control::fight(Player* player, Map* objMap)
 bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 
 	int mapValue = objMap->mapArray[x][y];
-	if (x> MAX_HEIGHT || x < 1  || y > MAX_WIDTH || y < 1)
+	if (x> MAX_HEIGHT - 1 || x < 0 || y > MAX_WIDTH - 1 || y < 0)
 		return false;
 	else if (mapValue == M_WALL || mapValue == M_WATER || mapValue == M_FENCE) {
 		return false;
@@ -46,12 +46,35 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 		return true;
 	}
 	else if (mapValue == M_TELEPORT) {
-		// TELEPORT ACTION
+		clear();
+		if (x == MAX_HEIGHT - 1) {
+			//objMap->saveMap("Map1_dump");
+			objMap->loadMap("2");
+			objMap->drawMap();
+			objMap->drawStatsGUI(p);
+			//move(playerX, playerY);
+			refresh();
+		}
+		else if (y == MAX_WIDTH - 1) {
+			objMap->loadMap("3");
+			objMap->drawMap();
+			objMap->drawStatsGUI(p);
+			//	objMap->drawStatsGUI(p);
+			refresh();
+		}
+		else {
+			objMap->loadMap("1");
+			objMap->drawMap();
+			objMap->drawStatsGUI(p);
+			refresh();
+		}
+
 		return true;
 	}
-	else if (mapValue == 'S'-48 || mapValue == 'H'-48 || mapValue == 'O'-48 || mapValue == 'P'-48) {
+	else if (mapValue == 'S' - 48 || mapValue == 'H' - 48 || mapValue == 'O' - 48 || mapValue == 'P' - 48) {
 		return false;
-	}else
+	}
+	else
 		return true;
 }
 

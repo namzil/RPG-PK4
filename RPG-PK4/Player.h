@@ -4,6 +4,7 @@
 #include "Skill.h"
 #include "Armor.h"
 #include "Weapon.h"
+#include "Enemy.h"
 #include "SkillTree.h"
 #include "Equipment.h"
 #include "NPC.h"
@@ -22,7 +23,7 @@ enum  prof { warrior, mage, ranger };
 class Player {
 
 protected:
-	string name;
+	char* name;
 	prof proffesion;
 	Equipment* equipment = new Equipment();
 //	Skill* skill = new Skill[3];
@@ -40,7 +41,7 @@ protected:
 
 
 public:
-	Player(string);
+	Player(char*);
 	~Player();
 
 	virtual void writeStatistic() = 0;
@@ -50,15 +51,13 @@ public:
 
 	void takeDamage(int);
 	void dead();  //metoda do zrobienia
-	string checkClass();
-
+	char* checkClass();
 	void updateDamage();
 	virtual void updateSkills() = 0;
 	virtual void updatePlayer();
 
 
-	//**********GETTERY I SETTERY************************
-	string getName();
+	char* getName();
 	Equipment* getEquipment();
 //	Skill* getSkill();
 	Weapon* getWeapon();

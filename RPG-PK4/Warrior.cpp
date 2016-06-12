@@ -2,7 +2,7 @@
 
 
 //kostruktor
-Warrior::Warrior(string n) : Player(n)
+Warrior::Warrior(char* n) : Player(n)
 {
 	proffesion = warrior;
 	maxHealth = 400;
