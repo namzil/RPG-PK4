@@ -41,7 +41,7 @@ public:
 	void saveMap();
 	void resetMap();
 	void setMapName(char*);
-	void drawFight();//do zrobienia
+	void drawFight(Enemy);//do zrobienia
 	void drawStatsGUI(Player*);
 	char* getMapName();
 	int getPlayerX();

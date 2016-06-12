@@ -4,17 +4,26 @@
 #include "Game.h"
 
 
-void Control::fight(Player* player)
+void Control::fight(Player* player, Map* objMap)
 {
 	Enemy wolf = Enemy("Wilk", 100, 20);
-
+	refresh();
+	system("cls");
 	while (player->getCurrentHealth() > 0 && wolf.getHealth() > 0)
 	{
-		cout << "HP: " << player->getCurrentHealth() << "\n" << "HP wilka: " << wolf.getHealth() << "\n";
+	//	cout<<player->getCurrentHealth();
+		cout << "HP: " << player->getCurrentHealth() << "\nHP wilka: " << wolf.getHealth() << "\n";
 		wolf.setHealth(wolf.getHealth() - player->getDamage());
 		if (wolf.getHealth() > 0)
 			player->setCurrentHealth(player->getCurrentHealth() - wolf.getDamage());
 	}
+	system("pause");
+	//refresh();
+	system("cls");
+	refresh();
+	objMap->drawMap();
+	refresh();
+	objMap->drawStatsGUI(player);
 }
 
 
@@ -33,7 +42,7 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 	else if (mapValue == M_ENEMY) {
 		// ENEMY ACTION
 		//gameState = FIGHT;
-		objMap->fight(player);
+		fight(player, objMap);
 		return true;
 	}
 	else if (mapValue == M_TELEPORT) {

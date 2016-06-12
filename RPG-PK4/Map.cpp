@@ -55,12 +55,12 @@ void Map::loadMap(string lvl) {
 		printw("I/O Error");
 }
 
-void Map::drawFight()
+void Map::drawFight(Enemy enemy)
 {
 	for (int i = 0; i < MAX_WIDTH; i++)
 		printw("-");
 	printw("\n");
-	//player1->writeStatistic();
+	cout << "HP wilka: " << enemy.getHealth();
 }
 
 

@@ -65,15 +65,15 @@ int main() {
 	initscr();
 	nocbreak();
 	char* name = new char[30];
-	int prof;
-	//char* prof2 = new char[4];
+	//int prof;
+	char* prof2 = new char[4];
 	printw("Podaj nazwe gracza\n");
 	refresh();
 	getstr(name);
 	printw("Wybierz klase: 1.wojownik 2.lucznik 3.mag\n");
 	refresh();
-	cin >> prof;
-	//int prof = int(getstr(prof2));
+	//cin >> prof;
+	int prof = int(getstr(prof2));
 	Player* gracz;
 
 	if (prof == 1)
@@ -102,7 +102,7 @@ int main() {
 	}
 
 	delete name;
-//	delete prof2;
+	delete prof2;
 
 	//Player* gracz2;
 	//Game::fight(gracz2);
