@@ -19,8 +19,8 @@ void Control::fight(Player* player, Map* objMap)
 	}
 	system("pause");
 	//refresh();
-	system("cls");
-	refresh();
+	//system("cls");
+	//refresh();
 	objMap->drawMap();
 	refresh();
 	objMap->drawStatsGUI(player);
