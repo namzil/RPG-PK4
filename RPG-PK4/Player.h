@@ -9,6 +9,8 @@
 #include "Equipment.h"
 #include "NPC.h"
 #include "Enemy.h"
+#include "Quest.h"
+#include "curses.h"
 
 #include <iostream>
 #include <string>
@@ -26,7 +28,6 @@ protected:
 	char* name;
 	prof proffesion;
 	Equipment* equipment = new Equipment();
-//	Skill* skill = new Skill[3];
     Weapon* weapon;
 	Armor* armor;
 	int maxHealth;
@@ -39,6 +40,7 @@ protected:
 	int intellect;
 	int damage;
 	double gold;
+	Quest quest;
 
 
 public:
@@ -47,11 +49,12 @@ public:
 
 	virtual void writeStatistic() = 0;
 	virtual void useSkill(char, Enemy &) = 0;
+	//virtual void showSkills() = 0;
 
 	virtual void levelUp() = 0;
 
 	void takeDamage(int);
-	void dead();  //metoda do zrobienia
+	void dead();  
 	char* checkClass();
 	void updateDamage();
 	virtual void updateSkills() = 0;
@@ -60,7 +63,6 @@ public:
 
 	char* getName();
 	Equipment* getEquipment();
-//	Skill* getSkill();
 	Weapon* getWeapon();
 	Armor* getArmor();
 	int getMaxHealth();
@@ -73,10 +75,10 @@ public:
 	int getIntellect();
 	double getGold();
 	int getDamage();
+	Quest getQuest();
 
 	void setName(char*);
 	void setEquipment(Equipment*);
-//	void setSkill(Skill*);
 	void setWeapon(Weapon*);
 	void setArmor(Armor*);
 	void setMaxHealth(int);
@@ -88,6 +90,7 @@ public:
 	void setAgility(int);
 	void setIntellect(int);
 	void setGold(double);
+	void setQuest(Quest);
 };
 
 

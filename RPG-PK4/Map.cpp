@@ -54,13 +54,13 @@ void Map::loadMap(string lvl) {
 	inFile.close();
 }
 
-void Map::drawFight(Enemy enemy)
+/*void Map::drawFight(Enemy enemy)
 {
 	for (int i = 0; i < MAX_WIDTH; i++)
 		printw("-");
 	printw("\n");
 	cout << "HP wilka: " << enemy.getHealth();
-}
+}*/
 
 
 void Map::drawStatsGUI(Player* player1) {
@@ -83,6 +83,7 @@ void Map::drawField(int field) {
 	init_pair(8, COLOR_WHITE, COLOR_BLUE);
 	init_pair(9, COLOR_BLACK, COLOR_YELLOW);
 	init_pair(10, COLOR_BLACK, COLOR_RED);
+	init_pair(11, COLOR_RED, COLOR_BLACK);
 	switch (field)
 	{
 	case M_PATH:
@@ -150,7 +151,11 @@ void Map::drawField(int field) {
 		printw("P");
 		attroff(COLOR_PAIR(7));
 		break;
-
+	case M_QUEST:
+		attron(COLOR_PAIR(11));
+		printw("!");
+		attroff(COLOR_PAIR(11));
+		break;
 	default:
 		char z = (char)(field + 48);
 		printw("%c", z);
@@ -185,6 +190,12 @@ void Map::restoreMap(char* fName) {
 void Map::setMapName(char* nName) {
 	nName = new char[40];
 	mapName = nName;
+}
+
+void Map::drawQuest(Player * player)
+{
+	printw("\n\nZADANIE Zabite wilki: %d\\5\n", player->getQuest().getCount());
+	refresh();
 }
 
 

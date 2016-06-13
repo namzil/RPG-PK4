@@ -19,6 +19,7 @@
 #define M_DOOR 7 //drzwi
 #define M_FLOOR 8 //pod³oga
 #define M_WATER 9 //woda
+#define M_QUEST 113-48 //zadanie
 #define M_PLAYER 112-48 //gracz 'p'
 
 #define MAX_ENEMY 15
@@ -41,7 +42,7 @@ public:
 	void saveMap(char*);
 	void restoreMap(char*);
 	void setMapName(char*);
-	void drawFight(Enemy);//do zrobienia
+	void drawQuest(Player*);//do zrobienia
 	void drawStatsGUI(Player*);
 	char* getMapName();
 	int getPlayerX();

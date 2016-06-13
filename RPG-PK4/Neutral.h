@@ -3,6 +3,8 @@
 
 #include "NPC.h"
 #include "Quest.h"
+#include "Player.h"
+#include "curses.h"
 
 
 class Neutral : public NPC
@@ -13,6 +15,7 @@ public:
 	Neutral(string);
 	~Neutral();
 	void showName();
+	void giveQuest(Player*);
 };
 
 #endif

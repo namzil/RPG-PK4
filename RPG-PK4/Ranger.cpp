@@ -22,8 +22,14 @@ Ranger::~Ranger()
 void Ranger::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Energia: " << currentEnergy << "\\" << maxEnergy << "\n";
+	//cout << "Energia: " << currentEnergy << "\\" << maxEnergy << "\n";
+	printw("Energia: %d\\%d\n",currentEnergy,maxEnergy);
 	showSkills();
+	if (quest.getIsActive())
+		printw("\n\nZADANIE Zabite wilki: %d\\5\n", quest.getCount());
+	if (quest.getIsComplete())
+		printw("ZAKONCZONO. WROC PO NAGRODE");
+	refresh();
 }
 
 void Ranger::levelUp()

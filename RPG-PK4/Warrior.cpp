@@ -24,8 +24,14 @@ Warrior::~Warrior()
 void Warrior::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Wscieklosc: " << currentRage << "\\" << maxRage << "\n";
+	//cout << "Wscieklosc: " << currentRage << "\\" << maxRage << "\n";
+	printw("Wscieklosc: %d\\%d\n",currentRage,maxRage);
 	showSkills();
+	if (quest.getIsActive())
+		printw("\n\nZADANIE Zabite wilki: %d\\5\n", quest.getCount());
+	if (quest.getIsComplete())
+		printw("ZAKONCZONO. WROC PO NAGRODE");
+	refresh();
 }
 
 void Warrior::levelUp()
@@ -53,6 +59,10 @@ void Warrior::useSkill(char spell, Enemy & enemy)
 	}
 	case '2': {
 		castHeroicStrike(enemy);
+		break;
+	}
+	case '3': {
+		castBloodlust(enemy);
 		break;
 	}
 	default: {

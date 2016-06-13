@@ -2,7 +2,7 @@
 
 
 //kostruktor
-Skill::Skill(string n, int c, int l)
+Skill::Skill(char* n, int c, int l)
 {
 	skillName = n;
 	canBeUsed = 0;
@@ -17,11 +17,12 @@ Skill::~Skill()
 void Skill::isAvalible()
 {
 	if (canBeUsed)
-		cout << skillName << "\n";
+		//cout << skillName << "\n";
+		printw("%s\n",skillName);
 }
 
 
-string Skill::getSkillName()
+char* Skill::getSkillName()
 {
 	return skillName;
 }
@@ -41,7 +42,7 @@ int Skill::getLevelRequired()
 	return levelRequired;
 }
 
-void Skill::setSkillName(string s)
+void Skill::setSkillName(char* s)
 {
 	skillName = s;
 }
