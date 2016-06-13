@@ -5,8 +5,8 @@
 class SkillTreeWarrior : public SkillTree
 {
 protected:
-	Skill heroicStrike = Skill("Heroiczny cios", 10, 1);
-	Skill bloodlust = Skill("Zadza krwi", 30, 3);
+	Skill heroicStrike = Skill("2.Heroiczny cios", 10, 1);
+	Skill bloodlust = Skill("3.Zadza krwi", 30, 3);
 
 public:
 	SkillTreeWarrior();

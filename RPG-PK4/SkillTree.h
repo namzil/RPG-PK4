@@ -10,7 +10,7 @@ using namespace std;
 class SkillTree
 {
 protected:
-	Skill basicAttack = Skill("Atak podstawowy", 0, 0);
+	Skill basicAttack = Skill("1.Atak podstawowy", 0, 0);
 
 public:
 	SkillTree();
