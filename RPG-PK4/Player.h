@@ -26,7 +26,6 @@ protected:
 	char* name;
 	prof proffesion;
 	Equipment* equipment = new Equipment();
-//	Skill* skill = new Skill[3];
     Weapon* weapon;
 	Armor* armor;
 	int maxHealth;
@@ -51,7 +50,7 @@ public:
 	virtual void levelUp() = 0;
 
 	void takeDamage(int);
-	void dead();  //metoda do zrobienia
+	void dead(); 
 	char* checkClass();
 	void updateDamage();
 	virtual void updateSkills() = 0;
@@ -60,7 +59,6 @@ public:
 
 	char* getName();
 	Equipment* getEquipment();
-//	Skill* getSkill();
 	Weapon* getWeapon();
 	Armor* getArmor();
 	int getMaxHealth();
@@ -76,7 +74,6 @@ public:
 
 	void setName(char*);
 	void setEquipment(Equipment*);
-//	void setSkill(Skill*);
 	void setWeapon(Weapon*);
 	void setArmor(Armor*);
 	void setMaxHealth(int);
