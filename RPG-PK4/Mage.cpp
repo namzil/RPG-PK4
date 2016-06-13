@@ -44,6 +44,8 @@ void Mage::updateSkills()
 		heal.setCanBeUsed(1);
 	if (level >= fireBlast.getLevelRequired())
 		fireBlast.setCanBeUsed(1);
+	if (level >= pyroblast.getLevelRequired())
+		pyroblast.setCanBeUsed(1);
 }
 
 void Mage::useSkill(char spell, Enemy & enemy)

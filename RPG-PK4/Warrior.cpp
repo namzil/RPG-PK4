@@ -39,6 +39,8 @@ void Warrior::updateSkills()
 		basicAttack.setCanBeUsed(1);
 	if (level >= heroicStrike.getLevelRequired())
 		heroicStrike.setCanBeUsed(1);
+	if (level >= bloodlust.getLevelRequired())
+		bloodlust.setCanBeUsed(1);
 }
 
 void Warrior::useSkill(char spell, Enemy & enemy)

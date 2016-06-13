@@ -39,6 +39,8 @@ void Ranger::updateSkills()
 		basicAttack.setCanBeUsed(1);
 	if (level >= headShot.getLevelRequired())
 		headShot.setCanBeUsed(1);
+	if (level >= aimedShot.getLevelRequired())
+		aimedShot.setCanBeUsed(1);
 }
 
 void Ranger::useSkill(char spell, Enemy & enemy)
@@ -51,6 +53,10 @@ void Ranger::useSkill(char spell, Enemy & enemy)
 	}
 	case '2': {
 		castHeadShot(enemy);
+		break;
+	}
+	case '3': {
+		castAimedShot(enemy);
 		break;
 	}
 	default: {
