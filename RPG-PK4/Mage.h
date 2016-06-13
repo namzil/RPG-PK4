@@ -17,9 +17,11 @@ private:
 public:
 	Mage(char*);
 	~Mage();
+
 	void writeStatistic();
 	void levelUp();
 	void updateSkills();
+
 	void useSkill(char, Enemy&);
 	void castBasicAtttack(Enemy&);
 	void castHeal();
