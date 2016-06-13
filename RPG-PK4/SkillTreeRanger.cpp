@@ -12,4 +12,5 @@ void SkillTreeRanger::showSkills()
 {
 	SkillTree::showSkills();
 	headShot.isAvalible();
+	aimedShot.isAvalible();
 }

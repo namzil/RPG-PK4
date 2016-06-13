@@ -62,6 +62,10 @@ void Mage::useSkill(char spell, Enemy & enemy)
 		castFireBlast(enemy);
 		break;
 	}
+	case '4': {
+		castPyroblast(enemy);
+		break;
+	}
 	default: {
 
 	}
@@ -95,5 +99,14 @@ void Mage::castFireBlast(Enemy & enemy)
 	{
 		enemy.setHealth(enemy.getHealth() - damage * 2);
 		currentMana -= fireBlast.getCost();
+	}
+}
+
+void Mage::castPyroblast(Enemy & enemy)
+{
+	if (currentMana >= pyroblast.getCost() && pyroblast.getCanBeUsed())
+	{
+		enemy.setHealth(enemy.getHealth() - damage * 3);
+		currentMana -= pyroblast.getCost();
 	}
 }

@@ -12,4 +12,5 @@ void SkillTreeWarrior::showSkills()
 {
 	SkillTree::showSkills();
 	heroicStrike.isAvalible();
+	bloodlust.isAvalible();
 }

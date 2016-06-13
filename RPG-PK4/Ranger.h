@@ -21,6 +21,7 @@ public:
 	
 	void castBasicAttack(Enemy&);
 	void castHeadShot(Enemy&);
+	void castAimedShot(Enemy&);
 	void useSkill(char, Enemy&);
 };
 

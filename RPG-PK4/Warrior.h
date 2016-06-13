@@ -17,9 +17,11 @@ public:
 	void levelUp();
 	void updateSkills();
 	
+
+	void useSkill(char, Enemy&);
 	void castBasicAttack(Enemy&);
 	void castHeroicStrike(Enemy&);
-	void useSkill(char, Enemy&);
+	void castBloodlust(Enemy&);
 };
 
 

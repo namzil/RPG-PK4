@@ -13,4 +13,5 @@ void SkillTreeMage::showSkills()
 	SkillTree::showSkills();
 	heal.isAvalible();
 	fireBlast.isAvalible();
+	pyroblast.isAvalible();
 }

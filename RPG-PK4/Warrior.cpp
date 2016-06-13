@@ -75,3 +75,13 @@ void Warrior::castHeroicStrike(Enemy & enemy)
 		currentRage -= heroicStrike.getCost();
 	}
 }
+
+void Warrior::castBloodlust(Enemy & enemy)
+{
+	if (currentRage >= bloodlust.getCost() && bloodlust.getCanBeUsed())
+	{
+		enemy.setHealth(enemy.getHealth() - damage * 2);
+		currentRage -= bloodlust.getCost();
+		currentHealth += damage;
+	}
+}

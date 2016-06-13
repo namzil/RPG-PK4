@@ -76,3 +76,12 @@ void Ranger::castHeadShot(Enemy & enemy)
 		currentEnergy -= headShot.getCost();
 	}
 }
+
+void Ranger::castAimedShot(Enemy & enemy)
+{
+	if (currentEnergy >= aimedShot.getCost() && aimedShot.getCanBeUsed())
+	{
+		enemy.setHealth(enemy.getHealth() - damage * 3);
+		currentEnergy -= aimedShot.getCost();
+	}
+}

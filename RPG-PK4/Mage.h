@@ -24,6 +24,7 @@ public:
 	void castBasicAtttack(Enemy&);
 	void castHeal();
 	void castFireBlast(Enemy&);
+	void castPyroblast(Enemy&);
 
 };
 
