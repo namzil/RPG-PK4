@@ -31,11 +31,36 @@ void Control::fight(Player* player, Map* objMap)
 		player->setExperience(player->getExperience() + 70);
 		if (player->getExperience() >= player->getExpNextLevel())
 			player->levelUp();
+		player->setQuest(player->getQuest().progress());
 		objMap->drawMap();
 		refresh();
 		objMap->drawStatsGUI(player);
 	}
 	else player->dead();
+}
+
+void Control::quest(Player * player, Map * objMap)
+{
+	//clear();
+	if (!player->getQuest().getIsActive())
+	{
+		Quest quest = Quest();
+		quest.setIsActive(1);
+		player->setQuest(quest);
+	}
+	objMap->drawMap();
+	refresh();
+	objMap->drawStatsGUI(player);
+	//objMap->drawQuest(player);
+
+	if (player->getQuest().getIsComplete())
+	{
+		player->setGold(player->getGold() + player->getQuest().getReward());
+		player->setQuest(player->getQuest().complete());
+		objMap->drawMap();
+		refresh();
+		objMap->drawStatsGUI(player);
+	}
 }
 
 
@@ -55,6 +80,11 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 		// ENEMY ACTION
 		//gameState = FIGHT;
 		fight(player, objMap);
+		return true;
+	}
+	else if (mapValue == M_QUEST) {
+		// QUEST ACTION
+		quest(player, objMap);
 		return true;
 	}
 	else if (mapValue == M_TELEPORT) {

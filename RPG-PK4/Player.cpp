@@ -6,16 +6,11 @@ Player::Player(char* n) {
 
 	name = new char[50];
 	name = n;
-	//maxHealth = 300;
-	//currentHealth = 300;
 	level = 0;
 	experience = 0;
 	expNextLevel = 100;
-	//strenght = 10;
-	//agility = 10;
-	//intellect = 10;
 	gold = 100.0;
-	//skill[0].unlockSkill("Atak podstawowy");
+	quest = Quest();
 }
 
 Player::~Player()
@@ -38,7 +33,9 @@ void Player::writeStatistic()
 	printw("Zrecznosc: %d \n", agility);
 	printw("Inteligencja: %d ", intellect);
 	printw("Obrazenia: %d \n", damage);
-	refresh();
+	printw("Zloto: %.2f\n", gold);
+	//showSkills();
+	//refresh();
 }
 
 
@@ -178,6 +175,11 @@ int Player::getDamage()
 	return damage;
 }
 
+Quest Player::getQuest()
+{
+	return quest;
+}
+
 void Player::setName(char* n)
 {
 	name = n;
@@ -221,6 +223,11 @@ void Player::setIntellect(int i)
 void Player::setGold(double g)
 {
 	gold = g;
+}
+
+void Player::setQuest(Quest q)
+{
+	quest = q;
 }
 
 void Player::setCurrentHealth(int h)

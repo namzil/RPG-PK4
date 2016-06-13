@@ -11,7 +11,7 @@ SkillTree::~SkillTree()
 
 void SkillTree::showSkills()
 {
-	cout << "Dostepne umiejetnosci:\n";
+	printw("Dostepne umiejetnosci:\n");
 	basicAttack.isAvalible();
 }
 

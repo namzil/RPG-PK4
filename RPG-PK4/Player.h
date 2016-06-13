@@ -9,6 +9,8 @@
 #include "Equipment.h"
 #include "NPC.h"
 #include "Enemy.h"
+#include "Quest.h"
+#include "curses.h"
 
 #include <iostream>
 #include <string>
@@ -38,6 +40,7 @@ protected:
 	int intellect;
 	int damage;
 	double gold;
+	Quest quest;
 
 
 public:
@@ -50,7 +53,7 @@ public:
 	virtual void levelUp() = 0;
 
 	void takeDamage(int);
-	void dead(); 
+	void dead();  
 	char* checkClass();
 	void updateDamage();
 	virtual void updateSkills() = 0;
@@ -71,6 +74,7 @@ public:
 	int getIntellect();
 	double getGold();
 	int getDamage();
+	Quest getQuest();
 
 	void setName(char*);
 	void setEquipment(Equipment*);
@@ -85,6 +89,7 @@ public:
 	void setAgility(int);
 	void setIntellect(int);
 	void setGold(double);
+	void setQuest(Quest);
 };
 
 

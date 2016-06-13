@@ -25,8 +25,14 @@ Mage::~Mage()
 void Mage::writeStatistic()
 {
 	Player::writeStatistic();
-	cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
+	//cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
+	printw("Mana: %d\\%d\n",currentMana,maxMana);
 	showSkills();
+	if (quest.getIsActive())
+		printw("\n\nZADANIE Zabite wilki: %d\\5\n", quest.getCount());
+	if (quest.getIsComplete())
+		printw("ZAKONCZONO. WROC PO NAGRODE");
+	refresh();
 }
 
 void Mage::levelUp()
