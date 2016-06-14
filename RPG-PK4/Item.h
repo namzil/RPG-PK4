@@ -5,13 +5,14 @@ using namespace std;
 class Player;
 class Item {
 protected:
-	string name;
+	char* name;
 	double price;
 	int fromLvl;
 public:
 	Item();
 	double buy();
 	double sell();
+	int getLvl();
 	virtual void use(Player*)=0;
 	virtual void showDescription()=0;
 

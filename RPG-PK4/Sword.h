@@ -9,7 +9,7 @@ class Sword :public Weapon {
 private:
 	double critical;
 public:
-	Sword(string name, double price, int lvl, int dmg, double crit);
+	Sword(char* name, double price, int lvl, int dmg, double crit);
 	double takeDamage();
 	void showDescription();
 

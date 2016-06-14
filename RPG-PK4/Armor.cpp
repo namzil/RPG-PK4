@@ -6,7 +6,7 @@
 using namespace std;
 
 //konstruktor
-Armor::Armor(string nName, double nPrice, int nLvl, int nDef, int mDef, double bc) {
+Armor::Armor(char* nName, double nPrice, int nLvl, int nDef, int mDef, double bc) {
 	name = nName;
 	price = nPrice;
 	fromLvl = nLvl;

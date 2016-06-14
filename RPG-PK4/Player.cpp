@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Eatable.h"
 #include "curses.h"
 
 //kostruktor
@@ -210,4 +211,24 @@ void Player::setWeapon(Weapon* w)
 {
 	weapon = w;
 
+}
+
+int Player::getLvl() {
+	return level;
+
+}
+
+void Player::setEquipment(Eatable* obj) {
+	
+}
+
+void Player::addItem(Eatable* obj) {
+	equip.insert(pair<int, Eatable*>(1, obj));
+}
+void Player::showEQ() {
+	for (int i = 1; (i <= equip.size()); i++) {
+		printw("%s \n", equip[i]->getName());
+	}
+	refresh();
+	getch();
 }

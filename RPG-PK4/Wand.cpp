@@ -1,10 +1,11 @@
 #include "Wand.h"
 #include <iostream>
 #include <string>
+#include "curses.h"
 
 using namespace std;
 
-Wand::Wand(string nName, double nPrice, int nLvl, int nMagCost, int nDmg, int nMagDmg, double nBc, double nCrit) {
+Wand::Wand(char* nName, double nPrice, int nLvl, int nMagCost, int nDmg, int nMagDmg, double nBc, double nCrit) {
 	name = nName;
 	price = nPrice;
 	fromLvl = nLvl;
@@ -46,12 +47,12 @@ double Wand::takeMagicDamage(Player* player1) {
 }
 
 void Wand::showDescription() {
-	cout << "Nazwa: " << name << endl;
-	cout << "Wymagany lvl: " << fromLvl << endl;
-	cout << "Max obrazenia: " << getDmg() << endl;
-	cout << "Max obra¿enia od magii: " << magicDamage << endl;
-	cout << "Koszt many: " << manaCost << endl;
-	cout << "Szansa uniku: " << blockChance << endl;
-	cout << "Szansa trafienia krytycznego: " << critical << endl;
-	cout << "Cena: " << price << endl;
+	printw("\nNazwa: %s\n",name);
+	printw("Wymagany lvl: %d \n",fromLvl);
+	printw("Max obrazenia: %d \n",getDmg());
+	printw("Max obra¿enia od magii: %d \n",magicDamage);
+	printw("Koszt many: %d \n", manaCost);
+	printw("Szansa uniku: %d \n", blockChance);
+	printw("Szansa trafienia krytycznego: %d \n",critical);
+	printw("CENA: %d \n",price);
 }

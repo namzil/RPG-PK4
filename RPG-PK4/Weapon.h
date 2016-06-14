@@ -12,6 +12,7 @@ public:
 	void virtual showDescription()=0;
 	void setDmg(int);
 	int getDmg();
+	char *getName();
 
 };
 

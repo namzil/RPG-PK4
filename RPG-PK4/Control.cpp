@@ -1,7 +1,8 @@
 #include "Control.h"
 #include "Map.h"
 #include "curses.h"
-
+#include "NPC.h"
+#include "Trader.h"
 bool Control::detectColision(int x, int y, Map* objMap, Player* p) {
 
 	int mapValue = objMap->mapArray[x][y];
@@ -11,7 +12,11 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* p) {
 		return false;
 	}
 	else if (mapValue == M_NPC) {
-		//NPC ACTION
+		scr_dump("mainWindow_dump");
+		clear();
+		Trader * objNPC = new Trader("Seller");
+		objNPC->showItems(p);
+		scr_restore("mainWindow_dump");
 		return true;
 	}
 	else if (mapValue == M_ENEMY) {

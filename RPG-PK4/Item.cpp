@@ -27,3 +27,6 @@ double Item::sell() {
 
 void Item::showDescription() {}
 
+int Item::getLvl() {
+	return fromLvl;
+}

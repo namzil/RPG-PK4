@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cstdlib>
+#include "curses.h"
 #include "Sword.h"
 
-Sword::Sword(string nName, double nPrice, int lvl, int nDmg, double crit) {
+Sword::Sword(char* nName, double nPrice, int lvl, int nDmg, double crit) {
 	name = nName;
 	price = nPrice;
 	fromLvl = lvl;
@@ -35,9 +36,9 @@ double Sword::takeDamage(){
 }
 
 void Sword::showDescription() {
-	cout << "Nazwa: " << name << endl;
-	cout << "Wymagany lvl: " << fromLvl << endl;
-	cout << "Max obrazenia: " << getDmg() << endl;
-	cout << "Szansa trafienia krytycznego: " << critical << endl;
-	cout << "Cena: " << price << endl;
+	printw("\nNazwa: %s \n", name);
+	printw("Wymagany lvl: %d \n",fromLvl);
+	printw("Max obrazenia: %d \n",getDmg());
+	printw("Szansa trafienia krytycznego: %d \n",critical);
+	printw("Cena: %d \n",price);
 }

@@ -1,6 +1,5 @@
 #include "Mage.h"
 #include "curses.h"
-#include "Enemy.h"
 
 //konstruktor
 Mage::Mage(char* n) : Player (n)

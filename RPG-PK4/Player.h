@@ -4,11 +4,12 @@
 #include "Skill.h"
 #include "Armor.h"
 #include "Weapon.h"
-#include "Enemy.h"
 #include "SkillTree.h"
 #include "Equipment.h"
+#include "Eatable.h"
 #include <iostream>
 #include <string>
+#include <map>
 
 class Weapon;
 class Armor;
@@ -24,7 +25,7 @@ class Player {
 protected:
 	char* name;
 	prof proffesion;
-	//Equipment* equip = new Equipment();
+	map<int, Eatable*> equip;
 	Skill* skill = new Skill[3];
 	Weapon* weapon;
 	Armor* armor;
@@ -40,6 +41,7 @@ protected:
 
 public:
 	Player(char*);
+	Player() {};
 	~Player();
 
 	virtual void writeStatistic() = 0;
@@ -63,6 +65,7 @@ public:
 	int getStrenght();
 	int getAgility();
 	int getIntellect();
+	int getLvl();
 	double getGold();
 	double getDamage();
 
@@ -78,6 +81,9 @@ public:
 	void setIntellect(int);
 	void setArmor(Armor*);
 	void setWeapon(Weapon*);
+	void setEquipment(Eatable* );
+	void addItem(Eatable*);
+	void showEQ();
 };
 
 
