@@ -6,15 +6,17 @@
 
 class Eatable: public Item {
 private:
+	char * name;
 	int hpRegen;
 	int manaRegen;
 	int energyRegen;
 	int rageRegen;
 
 public:
-	Eatable(int,int,int,int,int);
+	Eatable(char *, int,int,int,int,int, int);
 	void use(Player* );
 	void showDescription();
+	char* getName();
 
 };
 

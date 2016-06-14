@@ -23,7 +23,7 @@ void Ranger::writeStatistic()
 {
 	Player::writeStatistic();
 	//cout << "Energia: " << currentEnergy << "\\" << maxEnergy << "\n";
-	printw("Energia: %d\\%d\n",currentEnergy,maxEnergy);
+	printw("Energia: %d\\%d\n\n",currentEnergy,maxEnergy);
 	showSkills();
 	if (quest.getIsActive())
 		printw("\n\nZADANIE Zabite wilki: %d\\5\n", quest.getCount());
@@ -77,14 +77,14 @@ void Ranger::useSkill(char spell, Enemy & enemy)
 
 void Ranger::castBasicAttack(Enemy & enemy)
 {
-	enemy.setHealth(enemy.getHealth() - damage);
+	enemy.setHealth(enemy.getHealth() - doDamage(damage));
 }
 
 void Ranger::castHeadShot(Enemy & enemy)
 {
 	if (currentEnergy >= headShot.getCost() && headShot.getCanBeUsed())
 	{
-		enemy.setHealth(enemy.getHealth() - damage * 2);
+		enemy.setHealth(enemy.getHealth() - doDamage(damage) * 2);
 		currentEnergy -= headShot.getCost();
 	}
 }
@@ -93,7 +93,7 @@ void Ranger::castAimedShot(Enemy & enemy)
 {
 	if (currentEnergy >= aimedShot.getCost() && aimedShot.getCanBeUsed())
 	{
-		enemy.setHealth(enemy.getHealth() - damage * 3);
+		enemy.setHealth(enemy.getHealth() - doDamage(damage) * 3);
 		currentEnergy -= aimedShot.getCost();
 	}
 }

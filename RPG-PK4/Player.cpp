@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Eatable.h"
 #include "curses.h"
 
 //kostruktor
@@ -16,7 +17,7 @@ Player::Player(char* n) {
 Player::~Player()
 {
 	//delete [] skill;
-	delete equipment;
+//	delete equipment;
 	delete armor;
 	delete weapon;
 }
@@ -29,11 +30,13 @@ void Player::writeStatistic()
 	printw("Poziom: %d ", level);
 	printw("Doswiadczenie: %d \\ %d \n", experience, expNextLevel);
 	printw("HP: %d \\ %d \n", currentHealth, maxHealth);
+	if (weapon)
+		printw("Bron: %s\n",weapon->getName());
 	printw("Sila: %d ", strenght);
 	printw("Zrecznosc: %d \n", agility);
 	printw("Inteligencja: %d ", intellect);
 	printw("Obrazenia: %d \n", damage);
-	printw("Zloto: %.2f\n", gold);
+	printw("Zloto: %.0f\n", gold);
 	//showSkills();
 	//refresh();
 }
@@ -68,14 +71,20 @@ void Player::updateDamage()
 	switch (proffesion) {
 	case warrior: {
 		damage = (strenght * 10 + agility * 3 + intellect) / 10;
+		if (weapon)
+			damage += weapon->getDmg();
 			break;
 		}
 		case ranger: {
-		damage = (agility * 10 + strenght * 2 + intellect * 2) / 10;
+		damage = (agility * 10 + strenght * 2 + intellect * 2) / 10 ;
+		if (weapon)
+			damage += weapon->getDmg();
 			break;
 		}
 		case mage: {
-		damage = (intellect * 8 + strenght + agility * 3) / 10;
+		damage = (intellect * 8 + strenght + agility * 3) / 10 ;
+		if (weapon)
+			damage += weapon->getDmg();
 			break;
 		}
 		}
@@ -88,11 +97,10 @@ void Player::updatePlayer() {
 	updateDamage();
 }
 
-void Player::takeDamage(int damage)
+int Player::doDamage(int damage)
 {
-	currentHealth = currentHealth - damage;
-	if (currentHealth <= 0)
-		dead();
+	srand(time(NULL));
+	return rand()%damage + 0.5*damage;
 }
 
 void Player::dead()
@@ -110,10 +118,7 @@ char* Player::getName()
 	return name;
 }
 
-Equipment * Player::getEquipment()
-{
-	return equipment;
-}
+
 
 Weapon * Player::getWeapon()
 {
@@ -185,10 +190,6 @@ void Player::setName(char* n)
 	name = n;
 }
 
-void Player::setEquipment(Equipment* e)
-{
-	equipment = e;
-}
 
 void Player::setLevel(int l)
 {
@@ -252,4 +253,24 @@ void Player::setWeapon(Weapon* w)
 {
 	weapon = w;
 
+}
+
+int Player::getLvl() {
+	return level;
+
+}
+
+void Player::setEquipment(Eatable* obj) {
+	
+}
+
+void Player::addItem(Eatable* obj) {
+	equip.insert(pair<int, Eatable*>(1, obj));
+}
+void Player::showEQ() {
+	for (int i = 1; (i <= equip.size()); i++) {
+		printw("%s \n", equip[i]->getName());
+	}
+	refresh();
+	getch();
 }

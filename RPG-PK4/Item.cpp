@@ -14,7 +14,7 @@ void Item::use(Player* player1) {
 }
 //funkcja kup przedmiot
 double Item::buy() {
-	return price*(-1);
+	return price;
 }
 
 //funkcja sprzedaj przedmiot
@@ -27,3 +27,6 @@ double Item::sell() {
 
 void Item::showDescription() {}
 
+int Item::getLvl() {
+	return fromLvl;
+}

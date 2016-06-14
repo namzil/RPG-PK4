@@ -1,6 +1,6 @@
 #include "Neutral.h"
 
-Neutral::Neutral(string n) : NPC(n)
+Neutral::Neutral(char* n) : NPC(n)
 {
 	quest = Quest();
 	quest.setIsActive(1);

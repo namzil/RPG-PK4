@@ -1,7 +1,8 @@
 #include "Bow.h"
+#include "curses.h"
 #include <iostream>
 
-Bow::Bow(string nName, double nPrice, int nLvl, int nDmg, double nBc, double nCrit) {
+Bow::Bow(char* nName, double nPrice, int nLvl, int nDmg, double nBc, double nCrit) {
 	name = nName;
 	price = nPrice;
 	fromLvl = nLvl;
@@ -35,11 +36,11 @@ double Bow::takeDamage() {
 }
 
 void Bow::showDescription() {
-	cout << "Nazwa: " << name << endl;
-	cout << "Wymagany lvl: " << fromLvl << endl;
-	cout << "Max obrazenia: " << getDmg() << endl;
-	cout << "Szansa uniku: " << blockChance << endl;
-	cout << "Szansa trafienia krytycznego: " << critical << endl;
-	cout << "Cena: " << price << endl;
+	printw("\nNazwa: %s \n", name);
+	printw("Wymagany lvl: %d \n", fromLvl);
+	printw("Max obrazenia: %d \n",getDmg());
+	printw("Szansa uniku: %d \n", blockChance);
+	printw("Szansa trafienia krytycznego: %d \n", critical);
+	printw("CENA: %d \n",price);
 }
 

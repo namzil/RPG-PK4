@@ -25,7 +25,7 @@ void Warrior::writeStatistic()
 {
 	Player::writeStatistic();
 	//cout << "Wscieklosc: " << currentRage << "\\" << maxRage << "\n";
-	printw("Wscieklosc: %d\\%d\n",currentRage,maxRage);
+	printw("Wscieklosc: %d\\%d\n\n",currentRage,maxRage);
 	showSkills();
 	if (quest.getIsActive())
 		printw("\n\nZADANIE Zabite wilki: %d\\5\n", quest.getCount());
@@ -73,7 +73,7 @@ void Warrior::useSkill(char spell, Enemy & enemy)
 
 void Warrior::castBasicAttack(Enemy & enemy)
 {
-	enemy.setHealth(enemy.getHealth() - damage);
+	enemy.setHealth(enemy.getHealth() - doDamage(damage));
 	currentRage += 5;
 	if (currentRage > maxRage)
 		currentRage = maxRage;
@@ -83,7 +83,7 @@ void Warrior::castHeroicStrike(Enemy & enemy)
 {
 	if (currentRage >= heroicStrike.getCost() && heroicStrike.getCanBeUsed())
 	{
-		enemy.setHealth(enemy.getHealth() - damage*2);
+		enemy.setHealth(enemy.getHealth() - doDamage(damage) *2);
 		currentRage -= heroicStrike.getCost();
 	}
 }
@@ -92,7 +92,7 @@ void Warrior::castBloodlust(Enemy & enemy)
 {
 	if (currentRage >= bloodlust.getCost() && bloodlust.getCanBeUsed())
 	{
-		enemy.setHealth(enemy.getHealth() - damage * 2);
+		enemy.setHealth(enemy.getHealth() - doDamage(damage) * 2);
 		currentRage -= bloodlust.getCost();
 		currentHealth += damage;
 	}

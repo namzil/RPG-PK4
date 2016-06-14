@@ -7,7 +7,7 @@ private:
 	double blockChance;
 	double critical;
 public:
-	Bow(string name, double price, int lvl, int dmg, double bc, double crit);
+	Bow(char* name, double price, int lvl, int dmg, double bc, double crit);
 	double takeDamage();
 	void showDescription();
 };

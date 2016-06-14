@@ -12,7 +12,7 @@ class Neutral : public NPC
 private:
 	Quest quest;
 public:
-	Neutral(string);
+	Neutral(char*);
 	~Neutral();
 	void showName();
 	void giveQuest(Player*);

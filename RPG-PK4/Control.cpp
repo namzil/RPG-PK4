@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "curses.h"
 #include "Game.h"
+#include "Trader.h"
 
 
 void Control::fight(Player* player, Map* objMap)
@@ -19,7 +20,7 @@ void Control::fight(Player* player, Map* objMap)
 		player->useSkill(spell, wolf);
 		//wolf.setHealth(wolf.getHealth() - player->getDamage());
 		if (wolf.getHealth() > 0)
-			player->setCurrentHealth(player->getCurrentHealth() - wolf.getDamage());
+			player->setCurrentHealth(player->getCurrentHealth() - wolf.doDamage(wolf.getDamage()));
 		clear();
 		printw("HP wilka: %d\n\n", wolf.getHealth());
 		player->writeStatistic();
@@ -31,7 +32,8 @@ void Control::fight(Player* player, Map* objMap)
 		player->setExperience(player->getExperience() + 70);
 		if (player->getExperience() >= player->getExpNextLevel())
 			player->levelUp();
-		player->setQuest(player->getQuest().progress());
+		if (player->getQuest().getIsActive()) 
+			player->setQuest(player->getQuest().progress());
 		objMap->drawMap();
 		refresh();
 		objMap->drawStatsGUI(player);
@@ -73,7 +75,13 @@ bool Control::detectColision(int x, int y, Map* objMap, Player* player) {
 		return false;
 	}
 	else if (mapValue == M_NPC) {
-		//NPC ACTION
+		//scr_dump("mainWindow_dump");
+		clear();
+		Trader * objNPC = new Trader("Seller");
+		objNPC->showItems(player);
+		//scr_restore("mainWindow_dump");
+		objMap->drawMap();
+		objMap->drawStatsGUI(player);
 		return true;
 	}
 	else if (mapValue == M_ENEMY) {
@@ -130,32 +138,32 @@ void Control::catchEvents(Map* objMap, Player* player) {
 	switch (ch)
 	{
 		// Move up
-		case KEY_UP:
-			nDeltaX = -1;
-			nDeltaY = 0;
-			break;
+	case KEY_UP:
+		nDeltaX = -1;
+		nDeltaY = 0;
+		break;
 		// Move left
-		case KEY_LEFT:
-			nDeltaX = 0;
-			nDeltaY = -1;
-			break;
+	case KEY_LEFT:
+		nDeltaX = 0;
+		nDeltaY = -1;
+		break;
 		// Move right
-		case KEY_RIGHT:
-			nDeltaX = 0;
-			nDeltaY = 1;
-			break;
+	case KEY_RIGHT:
+		nDeltaX = 0;
+		nDeltaY = 1;
+		break;
 		// Move down
-		case KEY_DOWN:
-			nDeltaX = 1;
-			nDeltaY = 0;
-			break;
+	case KEY_DOWN:
+		nDeltaX = 1;
+		nDeltaY = 0;
+		break;
 		// Escape key
-		case CONSOLE_KEY_QUIT:
+	case CONSOLE_KEY_QUIT:
 		// Quit the program
 		return;
 		// Ignore all other keys
-		default:
-			break;
+	default:
+		break;
 	}
 
 	int currX = objMap->getPlayerX();

@@ -11,8 +11,8 @@ private:
 	int maxEnergy;
 	int currentEnergy;
 
-
 public:
+	Ranger() {};
 	Ranger(char*);
 	~Ranger();
 	void writeStatistic();

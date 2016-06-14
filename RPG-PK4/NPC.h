@@ -11,12 +11,15 @@ using namespace std;
 
 class NPC {
 private:
-	string name;
+	char* name;
 
 public:
-	NPC(string);
+	NPC(char*);
 	~NPC();
 	virtual void showName() = 0;
+	void showItems(Player* p);
+	void sell(Player* p);
+	void buy(Player* p);
 };
 
 #endif

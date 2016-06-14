@@ -4,6 +4,9 @@
 
 #include "NPC.h"
 
+#include <ctime>
+
+
 using namespace std;
 
 class Enemy : public NPC {
@@ -13,10 +16,12 @@ private:
 	Equipment equipment;
 
 public:
-	Enemy(string, int, int);
+	Enemy(char*, int, int);
 	~Enemy();
 
 	//Enemy spawnWolf();
+
+	int doDamage(int);
 
 	int getHealth();
 	int getDamage();

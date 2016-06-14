@@ -12,4 +12,8 @@ void Weapon::setDmg(int sDmg) {
 int Weapon::getDmg() {
 	return dmg;
 }
+
+char* Weapon::getName() {
+	return name;
+}
 //Weapon body

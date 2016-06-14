@@ -4,16 +4,18 @@
 #include "Skill.h"
 #include "Armor.h"
 #include "Weapon.h"
-#include "Enemy.h"
 #include "SkillTree.h"
 #include "Equipment.h"
 #include "NPC.h"
 #include "Enemy.h"
 #include "Quest.h"
 #include "curses.h"
+#include "Eatable.h"
 
 #include <iostream>
 #include <string>
+#include <map>
+#include <ctime>
 
 class Weapon;
 class Armor;
@@ -27,8 +29,9 @@ class Player {
 protected:
 	char* name;
 	prof proffesion;
-	Equipment* equipment = new Equipment();
-    Weapon* weapon;
+	map<int, Eatable*> equip;
+//	Skill* skill = new Skill[3];
+	Weapon* weapon;
 	Armor* armor;
 	int maxHealth;
 	int currentHealth;
@@ -45,6 +48,7 @@ protected:
 
 public:
 	Player(char*);
+	Player() {};
 	~Player();
 
 	virtual void writeStatistic() = 0;
@@ -52,7 +56,7 @@ public:
 
 	virtual void levelUp() = 0;
 
-	void takeDamage(int);
+	int doDamage(int);
 	void dead();  
 	char* checkClass();
 	void updateDamage();
@@ -61,7 +65,7 @@ public:
 
 
 	char* getName();
-	Equipment* getEquipment();
+//	Equipment* getEquipment();
 	Weapon* getWeapon();
 	Armor* getArmor();
 	int getMaxHealth();
@@ -72,14 +76,14 @@ public:
 	int getStrenght();
 	int getAgility();
 	int getIntellect();
+	int getLvl();
 	double getGold();
 	int getDamage();
 	Quest getQuest();
 
-	void setName(char*);
-	void setEquipment(Equipment*);
-	void setWeapon(Weapon*);
-	void setArmor(Armor*);
+	void setName(char *);
+	//void setEquipment(Equipment);
+//	void setSkill(Skill*);
 	void setMaxHealth(int);
 	void setCurrentHealth(int);
 	void setLevel(int);
@@ -88,6 +92,11 @@ public:
 	void setStrenght(int);
 	void setAgility(int);
 	void setIntellect(int);
+	void setArmor(Armor*);
+	void setWeapon(Weapon*);
+	void setEquipment(Eatable* );
+	void addItem(Eatable*);
+	void showEQ();
 	void setGold(double);
 	void setQuest(Quest);
 };

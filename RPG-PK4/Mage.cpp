@@ -1,6 +1,5 @@
 #include "Mage.h"
 #include "curses.h"
-#include "Enemy.h"
 
 //konstruktor
 Mage::Mage(char* n) : Player (n)
@@ -26,7 +25,7 @@ void Mage::writeStatistic()
 {
 	Player::writeStatistic();
 	//cout << "Mana: " << currentMana << "\\" << maxMana << "\n";
-	printw("Mana: %d\\%d\n",currentMana,maxMana);
+	printw("Mana: %d\\%d\n\n",currentMana,maxMana);
 	showSkills();
 	if (quest.getIsActive())
 		printw("\n\nZADANIE Zabite wilki: %d\\5\n", quest.getCount());
@@ -82,7 +81,7 @@ void Mage::useSkill(char spell, Enemy & enemy)
 
 void Mage::castBasicAtttack(Enemy & enemy)
 {
-	enemy.setHealth(enemy.getHealth() - damage);
+	enemy.setHealth(enemy.getHealth() - doDamage(damage));
 }
 
 void Mage::castHeal()
@@ -105,7 +104,7 @@ void Mage::castFireBlast(Enemy & enemy)
 {
 	if (currentMana >= fireBlast.getCost() && fireBlast.getCanBeUsed())
 	{
-		enemy.setHealth(enemy.getHealth() - damage * 2);
+		enemy.setHealth(enemy.getHealth() - doDamage(damage) * 2);
 		currentMana -= fireBlast.getCost();
 	}
 }
@@ -114,7 +113,7 @@ void Mage::castPyroblast(Enemy & enemy)
 {
 	if (currentMana >= pyroblast.getCost() && pyroblast.getCanBeUsed())
 	{
-		enemy.setHealth(enemy.getHealth() - damage * 3);
+		enemy.setHealth(enemy.getHealth() - doDamage(damage) * 3);
 		currentMana -= pyroblast.getCost();
 	}
 }
