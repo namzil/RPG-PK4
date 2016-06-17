@@ -106,7 +106,7 @@ int Player::doDamage(int damage)
 void Player::dead()
 {
 	clear();
-	printw("Umarnales. Koniec gry...");
+	printw("Umarles. Koniec gry...");
 	getch();
 	exit(0);
 	//refresh();
