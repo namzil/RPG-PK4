@@ -2,7 +2,6 @@
 #define CONTROL_HPP
 
 #include "Map.h"
-#include "Game.h"
 #include "Neutral.h"
 #define CONSOLE_KEY_QUIT 81
 

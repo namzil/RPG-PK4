@@ -134,7 +134,6 @@
     <ClCompile Include="Eatable.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Equipment.cpp" />
-    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Mage.cpp" />
     <ClCompile Include="main.cpp" />
@@ -160,7 +159,6 @@
     <ClInclude Include="Armor.h" />
     <ClInclude Include="Bow.h" />
     <ClInclude Include="Control.h" />
-    <ClInclude Include="Game.h" />
     <ClInclude Include="Mage.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Map.h" />
@@ -183,6 +181,9 @@
     <ClInclude Include="Eatable.h" />
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="Item.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

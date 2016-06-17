@@ -1,7 +1,6 @@
 #include "Control.h"
 #include "Map.h"
 #include "curses.h"
-#include "Game.h"
 #include "Trader.h"
 
 

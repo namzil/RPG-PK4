@@ -107,6 +107,8 @@ void Player::dead()
 {
 	clear();
 	printw("Umarnales. Koniec gry...");
+	getch();
+	exit(0);
 	//refresh();
 }
 

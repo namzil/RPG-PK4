@@ -33,8 +33,8 @@ void Map::setPlayer(int dX, int dY, Map* objMap) {
 void Map::loadMap(string lvl) {
 	ifstream inFile;
 	char tmpIn;
+	try{
 	inFile.open("..//Maps//Level" + lvl + ".txt");
-	if (inFile.good()) {
 		for (int x = 0; x < MAX_HEIGHT; x++) {
 			for (int y = 0; y < MAX_WIDTH; y++) {
 				inFile >> tmpIn; //czytanie pojedynczego znaku z pliku 
@@ -48,10 +48,11 @@ void Map::loadMap(string lvl) {
 		}
 		randomEnemy();
 		setPlayer(playerY, playerX, this);
+		inFile.close();
 	}
-	else
-		printw("I/O Error");
-	inFile.close();
+	catch (ifstream::failure e) { printw("I/O ERROR"); }
+
+	
 }
 
 /*void Map::drawFight(Enemy enemy)
